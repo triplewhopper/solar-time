@@ -8,3 +8,5 @@ assert.throws(()=>engine.calculate({ms:Date.UTC(2027,1,13,0,0,0,1),longitude:0,l
 const a=engine.eop(Date.UTC(2027,1,13),null,'reconstructed',true),z=engine.eop(Date.UTC(2099,1,1),null,'reconstructed',true);for(const k of ['dut1','xp','yp','dpsi','deps'])assert.equal(a[k],z[k]);
 const research=JSON.parse(read('tests/tail-validation.json'));assert.equal(research.overlap_conflicts,0);for(const r of research.overlapping_historical_controls){assert.equal(r.rounding_mismatches.length,0);assert.equal(r.overlap_conflicts.length,0);assert.ok(r.minimum_independent_windows>=2);}
 const report=JSON.parse(read('data/validation.json'));report.reconstruction={record_count:137,windows:70,overlap_conflicts:0,known_control_records:32,known_control_fields:160,known_control_failures:0,heldout_pck_rotations:research.heldout.count,heldout_pck_max_axis_mas:research.heldout.max_axis_mas,endpoint_cases:count,endpoint_max_error_us:max,effective_freeze_mjd:61449,support_end_mjd:61450,original_ascii_obtained:false};fs.writeFileSync(path.join(root,'data/validation.json'),JSON.stringify(report,null,2));console.log(report.reconstruction);
+
+require("./geoid-tests.cjs");

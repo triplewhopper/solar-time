@@ -93,9 +93,9 @@ class Engine {
   return {dut1,xp:inter(1),yp:inter(2),dx:missingCIP?0:inter(4),dy:missingCIP?0:inter(5),tai,
    status:a[6]==='P'||b[6]==='P'?'P':a[6]==='B'&&b[6]==='B'?'B':'A',missingCIP,error:Math.max(a[7]||0,b[7]||0)};
  }
- calculate({ms,longitude,latitude,height=0,manual=null,source='reconstructed',extrapolate=false}){
+ calculate({ms,longitude,latitude,height=0,geoidUndulation=0,manual=null,source='reconstructed',extrapolate=false}){
   if(!['reconstructed','legacy','jpl','iers'].includes(source))throw Error('未知地球自转数据来源。');
-  if(!Number.isFinite(ms)||!Number.isFinite(longitude)||Math.abs(longitude)>180||!Number.isFinite(latitude)||Math.abs(latitude)>=90||!Number.isFinite(height)||height< -1000||height>100000)throw Error('请输入有效位置；纬度须在南北极之间，高度范围 −1000 至 100000 米。');
+  if(!Number.isFinite(ms)||!Number.isFinite(longitude)||Math.abs(longitude)>180||!Number.isFinite(latitude)||Math.abs(latitude)>=90||!Number.isFinite(height)||!Number.isFinite(geoidUndulation)||Math.abs(geoidUndulation)>200||height< -1000+geoidUndulation||height>100000+geoidUndulation)throw Error('请输入有效位置；纬度须在南北极之间，高度范围 −1000 至 100000 米。');
   if(ms<Date.UTC(1972,0,1,0,15)||ms>Date.UTC(2099,11,31,14,59,59,999))throw Error('计算范围（东九区）：1972-01-01 09:15:00 至 2099-12-31 23:59:59.999。首日预留太阳光行时。');
   const erfa=this.erfa,eop=this.eop(ms,manual,source,extrapolate),utc=(ms-J2000MS)/86400000,tt=utc+(eop.tai+32.184)/DAY,ut1=utc+eop.dut1/DAY;
   const lon=rad(longitude),lat=rad(latitude),gc=erfa.gd2gc(1,lon,lat,height);

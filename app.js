@@ -1,7 +1,7 @@
 'use strict';
 (()=>{
  const $=id=>document.getElementById(id),M=SolarPrecision;
- let engine,live=true,forceError=false,validation=null,runtime=null;
+ let engine,live=true,forceError=false,validation=null,runtime=null,geoid=null;
  const source=()=>$('eopSource').value;
  const snapshotName=()=>engine.data.reconstructed.source_file_obtained?'JPL原始快照':'PCK恢复快照';
  const coords=['lonD','lonM','lonS','lonH','latD','latM','latS','latH','height'];
@@ -26,12 +26,12 @@
   if(!engine){clearResults();$('trueOffset').textContent='正在加载星历';return;}
   try{
    if(!forceError&&$('lonD').value===''&&$('latD').value===''){clearResults();$('trueOffset').textContent='等待输入经纬度';return;}
-   const longitude=readCoordinate('lon',180),latitude=readCoordinate('lat',90);if($('height').value==='')throw Error('请填写椭球高；未知时可使用 0 米作为近似。');
-   const height=Number($('height').value),r=engine.calculate({ms,longitude,latitude,height,manual:manualValues(),source:source(),extrapolate:$('extrapolate').checked});
+   const longitude=readCoordinate('lon',180),latitude=readCoordinate('lat',90);if($('height').value==='')throw Error('请填写海拔；可直接使用罗盘显示的米数。');
+   const elevation=Number($('height').value),converted=geoid.toEllipsoid(elevation,latitude,longitude),r=engine.calculate({ms,longitude,latitude,...converted,manual:manualValues(),source:source(),extrapolate:$('extrapolate').checked});
    $('trueOffset').textContent=M.duration(r.true,true);$('meanOffset').textContent=M.duration(r.mean);$('eot').textContent=M.duration(r.eot);
    $('direction').textContent='相对于东九区标准时 · '+$('date').value;
    showClock('mean',ms+32400000+r.mean*1000);showClock('true',ms+32400000+r.true*1000);
-   $('coordinate').textContent='经度 '+longitude.toFixed(9)+'° / 纬度 '+latitude.toFixed(9)+'° / 椭球高 '+height+' m';
+   $('coordinate').textContent='经度 '+longitude.toFixed(9)+'° / 纬度 '+latitude.toFixed(9)+'° / 海拔 '+elevation+' m';
    const release=engine.data.reconstructed.release_label,legacy=engine.data.legacy.release_label;
    const names={R:snapshotName()+'观测段 · '+release,RP:snapshotName()+'预测段 · '+release,RX:snapshotName()+'固定末值外推 · '+release,L:'JPL 原始格式观测数据 · '+legacy,LP:'JPL 原始格式预测数据 · '+legacy,LX:'JPL 原始格式固定末值外推 · '+legacy,J:'JPL EOP2 观测数据（固定备选快照）',JP:'JPL EOP2 预测数据（固定备选快照）',JX:'JPL EOP2 固定末值外推',B:'IERS B 最终数据',A:'IERS A 观测数据',P:'IERS A 预测数据',manual:'手动参数（精度由输入决定）'};
    $('eopStatus').textContent=names[r.eop.status]+'；UT1−UTC = '+r.dut1.toFixed(7)+' 秒；极移 xp / yp = '+r.eop.xp.toFixed(6)+'″ / '+r.eop.yp.toFixed(6)+'″。'+(r.eop.missingCIP?'缺少该时刻的 dX/dY，采用模型值（修正设为 0）。':(['legacy','reconstructed'].includes(source())?'已计入 dPsi/dEps 修正。':'已计入 dX/dY 修正。'))+(['P','JP','LP','RP'].includes(r.eop.status)?'未来预测可能变化。':'');
@@ -80,6 +80,7 @@
     if(hash!==manifest.eop_sha256)throw Error('新版数据正在同步，暂不切换快照。');
     [buffer,validation]=await Promise.all([responses[0].arrayBuffer(),responses[2].json()]);data=JSON.parse(new TextDecoder().decode(raw));runtime=manifest;
    }
+   if(!geoid)geoid=await GeoidGrid.load();
    engine=new M.Engine(buffer,data,ERFA);
    $('eopSource').querySelector('option[value="reconstructed"]').textContent=snapshotName()+' · '+data.reconstructed.release_label;
    $('eopSource').querySelector('option[value="legacy"]').textContent='JPL 原始格式 · '+data.legacy.release_label;

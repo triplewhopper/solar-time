@@ -185,5 +185,11 @@
     "threshold_us": 10,
     "scope": "Daily recovery interval, fresh boundary/polar probes and independent full-domain native checks; not exhaustive continuous-domain proof"
   },
-  "report_snapshot": "2026-11-18 frozen regression fixture; current version in data/runtime.json"
+  "report_snapshot": "2026-11-18 frozen regression fixture; current version in data/runtime.json",
+  "height_input": {
+    "user_field": "海拔（米）",
+    "conversion": "h = H + N",
+    "model_metadata": "data/geoid.json",
+    "runtime": "EGM2008 global grid, bilinear interpolation, all local; no coordinate queries"
+  }
 }

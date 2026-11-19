@@ -1,0 +1,18 @@
+{
+  "model": "EGM2008",
+  "grid": "5 arcminutes",
+  "interpolation": "bilinear",
+  "source": "https://sourceforge.net/projects/geographiclib/files/geoids-distrib/egm2008-5.tar.bz2/download",
+  "documentation": "https://geographiclib.sourceforge.io/C++/doc/geoid.html",
+  "source_archive_sha256": "9a57c14330ac609132d324906822a9da9de265ad9b9087779793eb7080852970",
+  "pgm_sha256": "96d55e88db186ddae892b00c5f8cc42a37cdac8ddb69b6de00af8c75dffb34a3",
+  "gzip_sha256": "8d518961a37c5b1db82db41f443b1027bf7cb355b75cc32189f8a3ea3f1217ec",
+  "bytes_gzip": 16793860,
+  "bytes_pgm": 18671444,
+  "conversion": "h = H + N; user enters orthometric elevation H, engine uses WGS84 ellipsoidal height h",
+  "publisher_grid_interpolation_error_m": {
+    "max": 0.478,
+    "rms": 0.012
+  },
+  "note": "Interpolation error relative to the gravity model, not a bound on measured elevation accuracy."
+}
