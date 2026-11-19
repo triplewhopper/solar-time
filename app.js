@@ -54,13 +54,15 @@
   for(let i=1;i<rows.length;i++){const delta=rows[i][3]-rows[i-1][3],epoch=(rows[i][0]-40587)*86400000;if(Math.abs(delta)>0.5&&epoch>leaps.at(-1)[0])leaps.push([epoch,leaps.at(-1)[1]+Math.round(delta)]);}
   engine.data={...engine.data,rows,leaps,source:'用户导入 IERS 文件'};$('eopSource').value='iers';changeSource();
  }
+ const locationInput=LocationInput.bind({button:$('locate'),status:$('locationStatus'),field:$,onFilled:render});
+ coords.filter(id=>id!=='height').forEach(id=>$(id).addEventListener('input',()=>locationInput.cancel()));
  coords.forEach(id=>$(id).addEventListener('input',render));manualIDs.forEach(id=>$(id).addEventListener('input',render));
  $('eopSource').addEventListener('change',changeSource);$('extrapolate').addEventListener('change',render);
  for(const id of ['date','time'])$(id).addEventListener('input',()=>{live=false;render();});
  $('form').addEventListener('submit',e=>{e.preventDefault();forceError=true;render();});
  $('now').addEventListener('click',()=>{live=true;setNow();render();});
- $('example').addEventListener('click',()=>{for(const [id,value] of Object.entries({lonD:135,lonM:0,lonS:0,lonH:1,latD:35,latM:0,latS:0,latH:1,height:100}))$(id).value=value;render();});
- $('reset').addEventListener('click',()=>{HTMLFormElement.prototype.reset.call($('form'));$('manualFields').hidden=true;live=true;forceError=false;setNow();updateLabels();if(engine)dateRange();render();});
+ $('example').addEventListener('click',()=>{locationInput.cancel();for(const [id,value] of Object.entries({lonD:135,lonM:0,lonS:0,lonH:1,latD:35,latM:0,latS:0,latH:1,height:100}))$(id).value=value;render();});
+ $('reset').addEventListener('click',()=>{locationInput.cancel();HTMLFormElement.prototype.reset.call($('form'));$('manualFields').hidden=true;live=true;forceError=false;setNow();updateLabels();if(engine)dateRange();render();});
  $('manual').addEventListener('change',()=>{const active=$('manual').checked;$('manualFields').hidden=!active;if(active&&engine){try{const e=engine.eop(M.parseJST($('date').value,$('time').value),null,source(),$('extrapolate').checked);manualIDs.forEach(id=>$(id).value=e[id]);}catch{}}render();});
  $('iersFile').addEventListener('change',async()=>{const f=$('iersFile').files[0];if(!f)return;try{if(f.size>15*1024*1024)throw Error('文件过大，请使用标准 IERS 文本文件。');importIERS(await f.text());$('engineStatus').textContent='已载入你选择的 IERS 数据；文件只在本页处理。';render();}catch(e){$('error').textContent=e.message;}});
  async function getJSON(url){const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw Error('更新信息暂时无法加载');return r.json();}

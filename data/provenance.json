@@ -145,7 +145,7 @@
     "support_end_mjd": 61450,
     "original_ascii_obtained": false
   },
-  "runtime": "All arithmetic local; no geolocation, coordinate upload, storage or calculation API",
+  "runtime": "All arithmetic local; optional user-triggered one-shot browser geolocation; no coordinate upload, storage or calculation API",
   "remaining": "Whether an original ASCII was obtained is recorded per snapshot. The Nov18 original is now obtained and matches all 137 recovered records. Remaining microsecond numerical residuals are not fully decomposed; agreement is not a physical accuracy guarantee. Far-future fixed EOP does not forecast real Earth rotation.",
   "current_snapshot": {
     "release_label": "2026-11-18（JPL原始）",

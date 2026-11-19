@@ -10,3 +10,5 @@ const research=JSON.parse(read('tests/tail-validation.json'));assert.equal(resea
 const report=JSON.parse(read('data/validation.json'));report.reconstruction={record_count:137,windows:70,overlap_conflicts:0,known_control_records:32,known_control_fields:160,known_control_failures:0,heldout_pck_rotations:research.heldout.count,heldout_pck_max_axis_mas:research.heldout.max_axis_mas,endpoint_cases:count,endpoint_max_error_us:max,effective_freeze_mjd:61449,support_end_mjd:61450,original_ascii_obtained:false};fs.writeFileSync(path.join(root,'data/validation.json'),JSON.stringify(report,null,2));console.log(report.reconstruction);
 
 require("./geoid-tests.cjs");
+
+require("./location-tests.cjs");
