@@ -65,7 +65,7 @@
    if($('offline-spk')){const bytes=atob($('offline-spk').textContent.trim()),array=new Uint8Array(bytes.length);for(let i=0;i<bytes.length;i++)array[i]=bytes.charCodeAt(i);buffer=array.buffer;data=JSON.parse($('offline-eop').textContent);validation=JSON.parse($('offline-validation').textContent);}
    else{const responses=await Promise.all(['data/de441-solar.bsp','data/eop.json','data/validation.json'].map(url=>fetch(url)));if(responses.some(r=>!r.ok))throw Error('本地星历资源未能加载，请重新打开页面。');[buffer,data,validation]=await Promise.all([responses[0].arrayBuffer(),responses[1].json(),responses[2].json()]);}
    engine=new M.Engine(buffer,data,ERFA);dateRange();$('engineStatus').textContent='DE441、JPL 与 IERS 数据已就绪 · 所有计算在当前浏览器内完成。';
-   $('precisionNote').textContent='已完成 '+validation.horizons.cases.toLocaleString()+' 组 Horizons 全范围分层对照。|纬度|≤85° 的样本最大差异 '+validation.horizons.nonpolar.max_abs_ms.toFixed(3)+' 毫秒；全域含近极点样本最大差异 '+(validation.horizons.all.max_abs_ms/1000).toFixed(3)+' 秒。这里只报告样本统计，不是连续定义域误差上界。';render();
+   $('precisionNote').textContent='默认 JPL 模式已完成 '+validation.horizons.cases.toLocaleString()+' 组 Horizons 全范围分层对照。|纬度|≤85° 的样本最大差异 '+validation.horizons.nonpolar.max_abs_ms.toFixed(3)+' 毫秒；全域含近极点样本最大差异 '+(validation.horizons.all.max_abs_ms/1000).toFixed(3)+' 秒。这里只报告样本统计，不是连续定义域误差上界。';render();
   }catch(e){$('engineStatus').textContent=e.message;$('engineStatus').classList.add('error-state');clearResults();$('trueOffset').textContent='星历加载失败';}
  }
  setNow();render();boot();setInterval(()=>{if(live){setNow();render();}},1000);
