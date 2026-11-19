@@ -1,5 +1,5 @@
 {
-  "status": "Diagnostic research complete; exact legacy EOP ASCII unavailable publicly through checked official endpoints; no empirical residual correction recommended.",
+  "status": "Original legacy-format file obtained from official SSD mirror through Chrome, HTTPS and anonymous FTP. Exact November18 reference release is still not obtained; public mirror is November17.",
   "official_sources": {
     "horizons": "https://ssd.jpl.nasa.gov/horizons/manual.html",
     "jpl_eop2": "https://eop-external.jpl.nasa.gov/eop2/261118_190003-marge_eop2.long",
@@ -30,9 +30,9 @@
   },
   "pck_limit": "PublicPCK fully reproduces terrestrial-to-inertial rotation, but testing still used modernCIP for apparentmeridian axis. It is not a fullyvalidated exactHorizonsreplacement. CurrentPCK covers2000-01-01..2027-02-14; historicalPCK covers1962-01-20..2026-08-08, older sourceEOP release.",
   "gmst_note": "Horizonsmanual prints67310.548 seconds versusERFAgmst82 67310.54841; literaldifference410microseconds. Manualprecision alone does not establish actualruntimeconstant; do not subtract410microseconds as a fit.",
-  "interpolation_note": "JPLEOP2 timestamps are MJD(TAI),notUTC; interpolateTAI-UT1,thenDUT1=TAI-UTC-(TAI-UT1). Here linearinterpolation used; legacyPCKdocumentation describes cubicLagrange and UT1Rdetiding for extension. Exactremainder cannot be assigned solelyto interpolation/tides without legacyinputandmodels.",
+  "interpolation_note": "LegacyMJD isUTC; seven-point blend identified on dedicatedprobes and independently validated. EOP2 usesTAI; modes keptseparate.",
   "pole_conditioning": "Awayfromsingularity, longitudeperturbation is approximatelytan(phi_c)*(delta_y_p*cos(lambda)+delta_x_p*sin(lambda)); angularhoursconvertat1arcsecond/15seconds. At89.999999deg,co-latitude3.6mas iscomparableto5masreferenceframerotation; linearapproximationbreaks, solarhouranglecanchangebyhours. This is a reference-meridianconditioningproblem, not guaranteedsubmillisecondglobalagreement.",
-  "recommended_release": "Use documentedmodernDE441+ERFA+JPLEOP2 model with explicitreferenceframe/dataepoch and measuredcomparisonbound perlatitude/date domain. Do not silentlyapplyanempiricaloffset; separate genuineUTCpredictionuncertaintyfromframe-conventionresidual. Freeze/predictbeyondEOPonlyexplicitly.",
+  "recommended_release": "Default original-format EOP/IAU76-80 mode with seven-point blended interpolation; preserve modern modes as explicit alternatives; report snapshot17Nov vsreference18Nov. No empirical residual offsets.",
   "downloaded_files": {
     "261118_190003-marge_eop2.long": {
       "bytes": 3993818,
@@ -46,5 +46,26 @@
       "bytes": 12274688,
       "sha256": "652b02c0b3a5a283d393497f7f96e1fe4aa47ee6dcc035a089eb9e6b5df86643"
     }
-  }
+  },
+  "original_legacy_download": {
+    "url": "https://ssd.jpl.nasa.gov/ftp/ssd/latest.long",
+    "release": "2026-11-17",
+    "sha256": "9010548bcfd1043fa7075133e3494dba8998693c0cd404ccdd04c7d7bde31b03",
+    "local_copy": "data/eop-2026-11-17.long",
+    "reference_release": "eop.261118.p270214",
+    "exact_reference_file_obtained": false
+  },
+  "interpolation_identified": {
+    "method": "F(t)=(1-t)P_i(t)+tP_(i+1)(t), with overlapping seven-point degree-six Lagrange polynomials; UTC nodes; no fitted residual correction",
+    "identification": "63 observer outputs at three synthetic sites and21times; independent42,200-case held-out replay",
+    "documented_basis": "Lower-order Newhall construction in JPL Descanso monograph Section2; seven-point order inferred from behavior, not claimed to be published JPL source",
+    "source": "https://descanso.jpl.nasa.gov/monograph/series2/Descanso2_S02.pdf"
+  },
+  "legacy_interpolation_comparison": {
+    "historical_cubic_max_seconds": 2.06504905919428,
+    "historical_blended_max_seconds": 1.4191318769007921e-06,
+    "historical_cases": 32560,
+    "cutoff_utc": "2026-11-01T00:00:00Z"
+  },
+  "unresolved": "The public legacy snapshot isone dayolderthan the reference. Recent/future cross-version EOPdifferences remain, amplifiednear poles. Microsecond historical residuals are not a proof of bitwiseidentity or absolutephysicalaccuracy."
 }

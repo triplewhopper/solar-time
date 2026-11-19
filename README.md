@@ -33,10 +33,10 @@ JPL数据以TAI为时间轴，IERS数据以UTC为时间轴；两者不可直接�
 
 - 原始JPL DE441 SPK Type2系数；太阳 (0,10)，地球 (0,3)+(3,399)。
 - UTC→TAI→TT→TDB；UT1由DUT1求得；使用双部分儒略日。
-- ERFA（SOFA派生库）IAU2006/2000A、CIP/CIO、极移、WGS84站点位置与速度。
+- ERFA（SOFA派生库）：默认IAU1976/1980，现代备选模式IAU2006/2000A；极移、WGS84站点位置与速度。
 - 迭代光行时、轨道及自转光行差、站点视差；太阳中心、无大气折射。
 - 太阳当地视时角来自CIRS站点子午面与太阳CIRS赤经的差；真太阳时为12小时加时角。
-- 默认JPL EOP2使用ITRF2008/ICRF2、IAU2006/2000A；可切换IERS数据，也可导入新的IERS文件。
+- 默认使用官方原始格式EOP（2026-11-17）、ITRF93和IAU1976/1980；现代JPL EOP2与IERS模式保留为可选项。
 - Horizons文档采用ITRF93、修正的IAU1976/1980及其legacy EOP，因而不是同一套完整约定。
 
 地球自转数据冻结在明确标注的日期。未来闰秒与新的测量数据需要更新。
@@ -45,7 +45,7 @@ JPL数据以TAI为时间轴，IERS数据以UTC为时间轴；两者不可直接�
 
 ## 验证
 
-运行 node tests/full-domain.cjs，再运行 node tests/spk-boundaries.cjs。
+运行 node tests/full-domain.cjs、node tests/legacy-tests.cjs、node tests/spk-boundaries.cjs，再运行 python3 scripts/report.py。
 此命令离线重放113,524个原生ERFA/jplephem参考案例和42,200个已缓存Horizons案例，包含：
 
 - 每日覆盖20,044天；所有所选SPK分段边界的58,440个邻域点。
@@ -61,9 +61,15 @@ JPL数据以TAI为时间轴，IERS数据以UTC为时间轴；两者不可直接�
 - tests/capture-domain.py 仅供维护者重新采集对照：串行、批量、缓存的人工坐标查询，不属于网页运行路径。
 - scripts/report.py 重建可读报告，不会生成压缩下载包。
 
-## 误差调查
+## 原始文件与误差修正
 
-原1973年样本的+3.689ms，经JPL的DUT1、极移和章动修正逐项替换后降到约−0.043ms。
-其他残差还涉及ITRF93与ITRF2008、传统与现代岁差章动和EOP插值约定。
-官方legacy EOP原始ASCII端点当前不可获取，因此剩余子毫秒项尚不能全部逐项归因。
-诊断用的部分框架旋转和PCK混合模型没有进入生产代码，未添加经验偏移来凑齐Horizons结果。
+官方文件 https://ssd.jpl.nasa.gov/ftp/ssd/latest.long 已通过Chrome、HTTPS和匿名FTP获取并交叉核对，保存在 data/eop-2026-11-17.long。
+公开镜像版本为2026-11-17，参考输出使用eop.261118.p270214（2026-11-18）；精确参考归档仍未取得，不以旧版冒充。
+
+已对齐原始格式的UTC时间轴、ITRF93、IAU1976岁差/IAU1980章动、GAST公式和七点拼接插值。
+插值阶数由63个专用诊断输出识别，并在独立的42,200案例上验证；这不是声称取得了JPL源码。
+2026-11-01 UTC之前的32,560个历史案例（含极近两极）最大差异约1.42微秒。
+近期预测与远期外推仍受数据版本差异影响，特别在近极区；完整全域统计不隐藏这些大差异。
+同模型原生ERFA/jplephem校验：现代和原始格式各113,524案例；原始格式额外有77项插值性质检查。
+
+未添加经验时间/坐标偏移。仍不声称全域精度上界或逐位一致；微秒级历史残差与精确快照问题在报告中明确保留。

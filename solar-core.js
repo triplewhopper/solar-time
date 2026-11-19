@@ -1,6 +1,6 @@
 /* Local DE441 + ERFA solar-time calculation. No network calls in this module.
  * Units: SPK km/km-second; ERFA au/au-day, radians, meters; output seconds.
- * Earth orientation: IAU2006/2000A + IERS dX/dY, WGS84, airless solar center.
+ * Earth orientation: legacy ITRF93/IAU76-80 by default; modern IAU2006/2000A modes retained. Airless solar center.
  */
 (function(root){
 'use strict';
@@ -50,11 +50,27 @@ function dms(d,m,s,h,max){
  if(![d,m,s,h].every(Number.isFinite)||!Number.isInteger(d)||!Number.isInteger(m)||d<0||d>max||m<0||m>=60||s<0||s>=60||![1,-1].includes(h)||(d===max&&(m!==0||s!==0)))throw Error('度分秒超出范围。');
  return h*(d+m/60+s/3600);
 }
+// C1 blend of two overlapping seven-node Lagrange interpolants. Identified
+// on dedicated probes, then validated independently over the full test plan.
+// No fitted position/time offsets. Nonuniform UTC node spacing is respected.
+function legacyInterpolate(rows,mjd){
+ let lo=0,hi=rows.length-1;while(hi-lo>1){const mid=(lo+hi)>>1;if(rows[mid][0]<=mjd)lo=mid;else hi=mid;}
+ const t=(mjd-rows[lo][0])/(rows[hi][0]-rows[lo][0]);
+ const local=start=>{start=Math.max(0,Math.min(rows.length-7,start));const out=Array(7).fill(0);for(let i=start;i<start+7;i++){let w=1;for(let j=start;j<start+7;j++)if(i!==j)w*=(mjd-rows[j][0])/(rows[i][0]-rows[j][0]);for(const k of [1,2,3,5,6])out[k]+=w*rows[i][k];}return out;};
+ const a=local(lo-3),b=local(lo-2);const out=a.map((v,k)=>(1-t)*v+t*b[k]);out[0]=mjd;out[4]=rows[lo][4];return out;
+}
 class Engine {
  constructor(buffer,data,erfa){this.spk=new SPK(buffer);this.data=data;this.erfa=erfa;}
  tai(ms){let out=null;for(const [epoch,n] of this.data.leaps){if(ms>=epoch)out=n;else break;}if(out===null)throw Error('支持 1972 年起的 UTC 日期。');return out;}
- eop(ms,manual,source='jpl',extrapolate=false){
-  if(manual){for(const key of ['dut1','xp','yp','dx','dy','tai'])if(!Number.isFinite(manual[key]))throw Error('请完整填写手动地球自转参数。');if(Math.abs(manual.dut1)>10||Math.abs(manual.xp)>10||Math.abs(manual.yp)>10||Math.abs(manual.dx)>1000||Math.abs(manual.dy)>1000||!Number.isInteger(manual.tai)||manual.tai<10||manual.tai>100)throw Error('手动修正参数超出允许范围。');return {...manual,status:'manual',missingCIP:false};}
+ eop(ms,manual,source='legacy',extrapolate=false){
+  if(manual){for(const key of ['dut1','xp','yp','dx','dy','tai'])if(!Number.isFinite(manual[key]))throw Error('请完整填写手动地球自转参数。');if(Math.abs(manual.dut1)>10||Math.abs(manual.xp)>10||Math.abs(manual.yp)>10||Math.abs(manual.dx)>1000||Math.abs(manual.dy)>1000||!Number.isInteger(manual.tai)||manual.tai<10||manual.tai>100)throw Error('手动修正参数超出允许范围。');return {...manual,dpsi:source==='legacy'?manual.dx:undefined,deps:source==='legacy'?manual.dy:undefined,status:'manual',missingCIP:false};}
+  if(source==='legacy'){
+   const j=this.data.legacy;if(!j)throw Error('未加载 JPL 原始格式数据。');
+   const mjd=ms/86400000+40587,rows=j.rows,outside=mjd<rows[0][0]||mjd>rows.at(-1)[0];
+   if(outside&&!extrapolate)throw Error('日期超出原始格式数据范围。请选择其他数据、填写手动参数，或明确启用末值外推。');
+   const v=legacyInterpolate(rows,Math.max(rows[0][0],Math.min(rows.at(-1)[0],mjd))),tai=this.tai(ms);
+   return {tai,dut1:tai-v[3],xp:v[1]/1000,yp:v[2]/1000,dx:v[5],dy:v[6],dpsi:v[5],deps:v[6],status:outside?'LX':ms>Date.parse(j.last_observation_utc)?'LP':'L',extrapolated:outside,missingCIP:false,release:j.release_label};
+  }
   if(source==='jpl'){
    const j=this.data.jpl;if(!j)throw Error('未加载 JPL 地球自转数据。');
    const tai=this.tai(ms),mjd=ms/86400000+40587+tai/DAY,rows=j.rows,first=rows[0][0],last=rows.at(-1)[0];
@@ -74,7 +90,8 @@ class Engine {
   return {dut1,xp:inter(1),yp:inter(2),dx:missingCIP?0:inter(4),dy:missingCIP?0:inter(5),tai,
    status:a[6]==='P'||b[6]==='P'?'P':a[6]==='B'&&b[6]==='B'?'B':'A',missingCIP,error:Math.max(a[7]||0,b[7]||0)};
  }
- calculate({ms,longitude,latitude,height=0,manual=null,source='jpl',extrapolate=false}){
+ calculate({ms,longitude,latitude,height=0,manual=null,source='legacy',extrapolate=false}){
+  if(!['legacy','jpl','iers'].includes(source))throw Error('未知地球自转数据来源。');
   if(!Number.isFinite(ms)||!Number.isFinite(longitude)||Math.abs(longitude)>180||!Number.isFinite(latitude)||Math.abs(latitude)>=90||!Number.isFinite(height)||height< -1000||height>100000)throw Error('请输入有效位置；纬度须在南北极之间，高度范围 −1000 至 100000 米。');
   if(ms<Date.UTC(1972,0,1,0,15)||ms>Date.UTC(2099,11,31,14,59,59,999))throw Error('计算范围（东九区）：1972-01-01 09:15:00 至 2099-12-31 23:59:59.999。首日预留太阳光行时。');
   const erfa=this.erfa,eop=this.eop(ms,manual,source,extrapolate),utc=(ms-J2000MS)/86400000,tt=utc+(eop.tai+32.184)/DAY,ut1=utc+eop.dut1/DAY;
@@ -82,15 +99,24 @@ class Engine {
   if(gc[0]!==0)throw Error('坐标转换失败。');
   const xyz=gc[1],dtr=erfa.dtdb(J2000,tt,mod(ms/86400000+eop.dut1/DAY,1),lon,Math.hypot(xyz[0],xyz[1])/1000,xyz[2]/1000),tdb=tt+dtr/DAY;
   const earth=this.spk.earth(tdb),sun=this.spk.state(0,10,tdb),ebpv=[scale(earth[0],1/AU),scale(earth[1],DAY/AU)],ehp=scale(sub(earth[0],sun[0]),1/AU);
-  let [x,y,s]=erfa.xys06a(J2000,tt);x+=eop.dx*AS/1000;y+=eop.dy*AS/1000;s=erfa.s06(J2000,tt,x,y);
-  const theta=erfa.era00(J2000,ut1),sp=erfa.sp00(J2000,tt);
-  const astrom=erfa.apco(J2000,tdb,ebpv,ehp,x,y,s,theta,lon,lat,height,eop.xp*AS,eop.yp*AS,sp,0,0);
+  let astrom,station;
+  if(source==='legacy'){
+   const precession=erfa.pmat76(J2000,tdb),[npsi,neps]=erfa.nut80(J2000,tdb),eps=erfa.obl80(J2000,tdb);
+   const bpn=erfa.rxr(erfa.numat(eps,npsi+eop.dpsi*AS/1000,neps+eop.deps*AS/1000),precession);
+   const gast=erfa.anp(erfa.gmst82(J2000,ut1)+erfa.eqeq94(J2000,tdb)+eop.dpsi*AS/1000*Math.cos(eps));
+   const pv=erfa.pvtob(lon,lat,height,eop.xp*AS,eop.yp*AS,0,gast);station=pv[0];
+   astrom=erfa.apcs(J2000,tdb,erfa.trxpv(bpn,pv),ebpv,ehp);astrom.bpn=bpn;
+  }else{
+   let [x,y,s]=erfa.xys06a(J2000,tt);x+=eop.dx*AS/1000;y+=eop.dy*AS/1000;s=erfa.s06(J2000,tt,x,y);
+   const theta=erfa.era00(J2000,ut1),sp=erfa.sp00(J2000,tt);
+   astrom=erfa.apco(J2000,tdb,ebpv,ehp,x,y,s,theta,lon,lat,height,eop.xp*AS,eop.yp*AS,sp,0,0);
+   station=erfa.pvtob(lon,lat,height,eop.xp*AS,eop.yp*AS,sp,theta)[0];
+  }
   let lt=0,vector;
   for(let k=0;k<5;k++){vector=sub(scale(this.spk.state(0,10,tdb-lt/DAY)[0],1/AU),astrom.eb);lt=Math.hypot(...vector)*AU/C;}
   const unit=scale(vector,1/Math.hypot(...vector)),aberrated=erfa.ab(unit,astrom.v,astrom.em,astrom.bm1),cirs=erfa.rxp(astrom.bpn,aberrated),[ra,dec]=erfa.c2s(cirs);
   // Horizons Q34/Q42 use the meridian about the celestial pole of date.
   // atioq's polar-motion-rotated observed HA is a different convention.
-  const station=erfa.pvtob(lon,lat,height,eop.xp*AS,eop.yp*AS,sp,theta)[0];
   const hourAngle=erfa.anpm(Math.atan2(station[1],station[0])-ra),solar=mod(43200+hourAngle*43200/Math.PI,DAY);
   const jst=mod(ms/1000+32400,DAY),longitudeOffset=(longitude-135)*240,mean=longitudeOffset+eop.dut1;
   let offset=solar-jst;offset+=DAY*Math.round((mean-offset)/DAY);
@@ -106,5 +132,5 @@ function parseJST(date,time){
 }
 function clock(ms){const iso=new Date(Math.round(ms)).toISOString();return {date:iso.slice(0,10),time:iso.slice(11,23)};}
 function duration(s,words=false){let n=Math.round(Math.abs(s)*1000),h=Math.floor(n/3600000),m=Math.floor(n%3600000/60000),sec=(n%60000/1000).toFixed(3).padStart(6,'0');return (n===0?(words?'相同':''):(words?(s>0?'快 ':'慢 '):(s>0?'+':'−')))+(n===0&&words?'':(h?h+'小时 ':'')+m+'分 '+sec+'秒');}
-root.SolarPrecision={Engine,SPK,dms,parseJST,clock,duration};
+root.SolarPrecision={Engine,SPK,dms,legacyInterpolate,parseJST,clock,duration};
 })(typeof globalThis!=='undefined'?globalThis:this);

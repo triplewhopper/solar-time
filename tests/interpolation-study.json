@@ -1,0 +1,25 @@
+{
+  "source": "Dedicated Horizons probe used only toidentifyinterpolator; no fitted per-pointvalues shipped inruntime",
+  "probe_cases": 63,
+  "inverse_check": {
+    "ms": 816425783123,
+    "mjd": 50036.372489849535,
+    "raw_cubic": [
+      50036.372489849535,
+      -26.805682679138688,
+      87.6227515219316,
+      29.32562179483415,
+      29.0,
+      -30.307153379822456,
+      -6.2760107489611245
+    ],
+    "fitted_xp_yp_gast": [
+      -26.791018685729306,
+      87.62222158692575,
+      2.0132940885536237e-06
+    ],
+    "residual_max_seconds": 1.9621802493929863e-07
+  },
+  "independent_historical_max_us": 1.4191318769007921,
+  "reference_file": "eop.261118.p270214"
+}
