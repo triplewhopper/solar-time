@@ -1,0 +1,163 @@
+{
+  "heldout": {
+    "count": 544,
+    "fractions": [
+      0.07321,
+      0.38321,
+      0.67321,
+      0.97321
+    ],
+    "training_fractions": [
+      0.025,
+      0.125,
+      0.225,
+      0.325,
+      0.425,
+      0.525,
+      0.625,
+      0.725,
+      0.825,
+      0.925
+    ],
+    "max_axis_mas": [
+      5.19554247477667e-05,
+      3.235856882882126e-05,
+      0.03494543376285166
+    ],
+    "max_norm_mas": 0.03494543377987877,
+    "rms_norm_mas": 0.009749549089639072,
+    "worst": {
+      "utc": "2027-01-22T09:11:49.344000+00:00",
+      "residual_rotation_mas": [
+        -2.8054054940218874e-07,
+        -1.0541994200198003e-06,
+        0.03494543376285166
+      ]
+    }
+  },
+  "controls": [
+    {
+      "center": "2000-01-15",
+      "known_record_count": 8,
+      "known_parameter_count": 40,
+      "rounding_mismatches": [],
+      "inferred_ut1_deviation_us": [
+        -0.005290765159315924,
+        -0.0006715445977079071,
+        -0.009032778081063952,
+        0.0008830660647163313,
+        -0.017443355204704858,
+        -0.00384081388915547,
+        0.004136424536227423,
+        -0.015367351835493537
+      ],
+      "condition_number": 717.2042528021345
+    },
+    {
+      "center": "2016-07-15",
+      "known_record_count": 8,
+      "known_parameter_count": 40,
+      "rounding_mismatches": [
+        {
+          "mjd": 57581.0,
+          "column": 5,
+          "base": -99.88,
+          "derived": -99.86999999999999,
+          "quantum": 0.01
+        }
+      ],
+      "inferred_ut1_deviation_us": [
+        -0.005053685470102209,
+        -0.12028400675490047,
+        -0.06955293230248571,
+        -0.014817572946412838,
+        -0.07194707052349258,
+        -0.018099342469213298,
+        -0.08111031490898313,
+        -0.034091222289589496
+      ],
+      "condition_number": 717.2951006668694
+    },
+    {
+      "center": "2020-06-15",
+      "known_record_count": 8,
+      "known_parameter_count": 40,
+      "rounding_mismatches": [
+        {
+          "mjd": 59012.0,
+          "column": 5,
+          "base": -107.52,
+          "derived": -107.53,
+          "quantum": 0.01
+        }
+      ],
+      "inferred_ut1_deviation_us": [
+        -0.1465219980900656,
+        -0.09291426295021665,
+        0.05101111355543253,
+        -0.08959308672729094,
+        -0.07829838466477668,
+        -0.03256627678638324,
+        -0.11249270670532496,
+        -0.21603094069178042
+      ],
+      "condition_number": 717.2258996195014
+    },
+    {
+      "center": "2024-01-01",
+      "known_record_count": 8,
+      "known_parameter_count": 40,
+      "rounding_mismatches": [],
+      "inferred_ut1_deviation_us": [
+        -0.18642583654582268,
+        -0.19622081737225017,
+        -0.2185842333801702,
+        -0.06870831015248768,
+        0.01839723751118072,
+        -0.24097450790350194,
+        0.010048111676042026,
+        -0.026090020810443093
+      ],
+      "condition_number": 717.1868384177563
+    }
+  ],
+  "overlap_conflicts": 0,
+  "boundary_note": "Only a sub-microsecond floating-point overshoot of the PCK end is clamped to the exact kernel end; no wider extrapolation.",
+  "overlapping_historical_controls": [
+    {
+      "center": "2000-01-15",
+      "known_records": 8,
+      "known_parameters": 40,
+      "minimum_independent_windows": 2,
+      "overlap_conflicts": [],
+      "rounding_mismatches": []
+    },
+    {
+      "center": "2016-07-15",
+      "known_records": 8,
+      "known_parameters": 40,
+      "minimum_independent_windows": 2,
+      "overlap_conflicts": [],
+      "rounding_mismatches": []
+    },
+    {
+      "center": "2020-06-15",
+      "known_records": 8,
+      "known_parameters": 40,
+      "minimum_independent_windows": 2,
+      "overlap_conflicts": [],
+      "rounding_mismatches": []
+    },
+    {
+      "center": "2024-01-01",
+      "known_records": 8,
+      "known_parameters": 40,
+      "minimum_independent_windows": 2,
+      "overlap_conflicts": [],
+      "rounding_mismatches": []
+    }
+  ],
+  "single_window_edge_failures_retained": true,
+  "original_ascii_obtained": true,
+  "original_records_compared": 137
+}

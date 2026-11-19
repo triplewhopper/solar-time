@@ -2,12 +2,16 @@ from pathlib import Path
 import json,math,numpy as np,erfa,hashlib
 from datetime import datetime,timezone,timedelta
 exec(Path('work/eop-followup/recover-pck.py').read_text().split("out=[solve")[0])
-# Extend only the numerical starting guess; appendedrecord is explicitly not originaldata.
-last=rows[-1].copy();new=last+(rows[-1]-rows[-2])/(rows[-1,0]-rows[-2,0]);new[0]=last[0]+1;new[4]=last[4];rows=np.vstack([rows,new])
-start=datetime(2026,10,1,tzinfo=timezone.utc);end=datetime(2027,2,14,tzinfo=timezone.utc)
+# Extrapolation here is only a starting guess for PCK inversion, never released data.
+start=datetime.fromisoformat(config.get('start','2026-10-01')).replace(tzinfo=timezone.utc)
+end=datetime.fromisoformat(config.get('end','2027-02-14')).replace(tzinfo=timezone.utc)
+end_mjd=end.timestamp()/86400+40587
+while rows[-1,0]<end_mjd:
+ last=rows[-1].copy();new=last+(rows[-1]-rows[-2])/(rows[-1,0]-rows[-2,0]);new[0]=last[0]+1;new[4]=last[4];rows=np.vstack([rows,new])
 centers=[];t=start-timedelta(days=2)
 while t<=end-timedelta(days=4):centers.append((t.date().isoformat(),8));t+=timedelta(days=2)
-for x in [('2027-02-10',8),('2027-02-09',10),('2027-02-08',12)]:
+for offset,n in [(4,8),(5,10),(6,12)]:
+ x=((end-timedelta(days=offset)).date().isoformat(),n)
  if x not in centers:centers.append(x)
 blocks=[]
 for bi,(center,n) in enumerate(centers):
@@ -36,7 +40,7 @@ for utc,candidates in sorted(bydate.items()):
  consistent=len(counts)==1
  if not consistent:conflicts.append(dict(utc=utc,alternatives=[dict(record=list(k),count=v) for k,v in counts.items()],candidates=use))
  chosen=min([r for r in use if tuple(r['record'])==best],key=lambda r:r['max_angular_distance_to_quantum'])
- recovered.append(dict(utc=utc,record=list(best),windows=len(use),consistent=consistent,all_window_count=len(candidates),source='Nov18PCKderived; nottheoriginalASCIIfile',uncertainty=dict(max_angular_distance_to_quantum=max(r['max_angular_distance_to_quantum'] for r in use),max_ut1_distance_to_quantum_us=max(r['ut1_distance_to_quantum_us'] for r in use)),chosen_window=chosen['window']))
-out={'provenance':'ReconstructedfromofficialNov18PCKrotationsusinglegacyIAU76/80,FolknertrueobliquityEqEq,SPICELSKtime,andcubicLagrangeEOPinterpolation. NotdownloadedoriginalEOPASCII. NoHorizonsobservablesusedinfit. Nov17ASCIIusedasstartingguess.', 'PCK_file':'work/precision-audit/earth_000101_270214_261118.bpc','PCK_sha256':hashlib.sha256(Path('work/precision-audit/earth_000101_270214_261118.bpc').read_bytes()).hexdigest(),'baseline_file':'work/horizons-original/latest.long','baseline_sha256':hashlib.sha256(Path('work/horizons-original/latest.long').read_bytes()).hexdigest(),'derived_start':'2026-10-01','derived_end':'2027-02-14','baseline_preserved_outside_derived_range':True,'column_names':['mjd_utc','xp_mas','yp_mas','tai_minus_ut1_seconds','tai_minus_utc_seconds','dpsi_mas','deps_mas'],'record_quantum':[None,.01,.01,.000001,1,.01,.01],'record_count':len(recovered),'window_count':len(blocks),'conflict_count':len(conflicts),'records':recovered,'conflicts':conflicts}
+ recovered.append(dict(utc=utc,record=list(best),windows=len(use),consistent=consistent,all_window_count=len(candidates),source='PCK derived; not the original ASCII file',uncertainty=dict(max_angular_distance_to_quantum=max(r['max_angular_distance_to_quantum'] for r in use),max_ut1_distance_to_quantum_us=max(r['ut1_distance_to_quantum_us'] for r in use)),chosen_window=chosen['window']))
+out={'provenance':'Reconstructed from official PCK rotationsusinglegacyIAU76/80,FolknertrueobliquityEqEq,SPICELSKtime,andcubicLagrangeEOPinterpolation. NotdownloadedoriginalEOPASCII. NoHorizonsobservablesusedinfit. Baseline ASCII used as starting guess.', 'PCK_file':kernel_path,'PCK_sha256':hashlib.sha256(Path(kernel_path).read_bytes()).hexdigest(),'baseline_file':'work/horizons-original/latest.long','baseline_sha256':hashlib.sha256(Path('work/horizons-original/latest.long').read_bytes()).hexdigest(),'derived_start':start.date().isoformat(),'derived_end':end.date().isoformat(),'baseline_preserved_outside_derived_range':True,'column_names':['mjd_utc','xp_mas','yp_mas','tai_minus_ut1_seconds','tai_minus_utc_seconds','dpsi_mas','deps_mas'],'record_quantum':[None,.01,.01,.000001,1,.01,.01],'record_count':len(recovered),'window_count':len(blocks),'conflict_count':len(conflicts),'records':recovered,'conflicts':conflicts}
 (root/'pck-derived-eop-2026-11-18.json').write_text(json.dumps(out,indent=2)+'\n')
 print('Records',len(recovered),'windows',len(blocks),'conflicts',len(conflicts));print('end',recovered[-2:]);print('conflict dates',[c['utc'] for c in conflicts])

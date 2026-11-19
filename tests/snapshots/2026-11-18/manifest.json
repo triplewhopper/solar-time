@@ -1,0 +1,6 @@
+{
+  "eop_sha256": "a159c9a19e03bf71051532906716deeec03e9eeec5d9156b9bbedf0897041d7a",
+  "horizons_eop": "eop.261118.p270214",
+  "horizons_reference_sha256": "f102f99d703daa0de7af689d1ab4768674e0753b7cb0ab055abdf283d0972c20",
+  "purpose": "Immutable data pairing for algorithm regression; not the current live data version."
+}

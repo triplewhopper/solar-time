@@ -67,7 +67,7 @@
     "historical_cases": 32560,
     "cutoff_utc": "2026-11-01T00:00:00Z"
   },
-  "unresolved": "Original Nov18 ASCII bytes and the publisher synchronization mechanism remain unavailable. Independent PCK recovery resolves the large cross-version discrepancies in the tested cases. The remaining few-microsecond residual has not been fully decomposed; numerical agreement is not a physical-accuracy guarantee.",
+  "unresolved": "The original Nov18 ASCII is now available, and all 137 independently recovered records match it. Internal upstream synchronization is still not documented. Remaining microsecond numerical residuals are not fully decomposed.",
   "reconstructed_snapshot": {
     "release_label": "2026-11-18（PCK恢复）",
     "source_kind": "reconstructed_from_official_pck_not_original_ascii",
@@ -105,5 +105,16 @@
     "support_end_mjd": 61450,
     "original_ascii_obtained": false
   },
-  "remaining": "No byte-identical original Nov18ASCII file was obtained. Recovered records are explicitly derived. Residualfewmicroseconds are numerical/modelagreement,notphysicalaccuracy guarantees, and farfuturefixedEOP isnotrealEarthprediction."
+  "remaining": "The original Nov18 ASCII is now available, and all 137 independently recovered records match it. Internal upstream synchronization is still not documented. Remaining microsecond numerical residuals are not fully decomposed.",
+  "original_legacy_download_followup": {
+    "url": "https://ssd.jpl.nasa.gov/ftp/ssd/latest.long",
+    "release": "2026-11-18",
+    "sha256": "9b9feb3d86223dc7641c7f71d751e67ac5f1cfdfe382861e4bb5ef0eea14095d",
+    "retrieved_utc": "2026-11-19",
+    "record_comparison": {
+      "recovered_records": 137,
+      "mismatches_at_published_precision": 0
+    },
+    "interpretation": "The public mirror has caught up. This supports delayed publication/synchronization; it does not reveal the internal transfer mechanism."
+  }
 }

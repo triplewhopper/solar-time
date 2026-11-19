@@ -1,7 +1,7 @@
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),path=require('path');
 const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p));
 const c={console};vm.createContext(c);for(const file of ['vendor/erfa.min.js','solar-core.js'])vm.runInContext(read(file).toString(),c);
-const b=read('data/de441-solar.bsp'),data=JSON.parse(read('data/eop.json')),M=c.SolarPrecision,engine=new M.Engine(b.buffer.slice(b.byteOffset,b.byteOffset+b.length),data,c.ERFA);
+const b=read('data/de441-solar.bsp'),data=require('./snapshot.cjs')(),M=c.SolarPrecision,engine=new M.Engine(b.buffer.slice(b.byteOffset,b.byteOffset+b.length),data,c.ERFA);
 const calculate=engine.calculate.bind(engine);engine.calculate=o=>calculate({...o,source:'iers'});
 const reference=JSON.parse(read('tests/horizons-reference.json')),native=JSON.parse(read('tests/native-reference.json'));
 const difference=(a,b)=>((a-b+43200)%86400+86400)%86400-43200;

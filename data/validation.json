@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-19T06:43:22.871Z",
+  "generated": "2026-11-19T07:21:20.687Z",
   "model": "DE441 + IAU1976/1980 + independently PCK-reconstructed Nov18-equivalent EOP tail, original Nov17 historical baseline; seven-point blend; no fitted offsets",
   "scope": "Stratified, random, daily, boundary and stress coverage of every declared input dimension; not exhaustive proof over continuous inputs",
   "horizons": {
@@ -264,6 +264,19 @@
     "The exact original Nov18 ASCII file is not obtained. The changed137dailyrecords are reconstructed from officialNov18PCK withoutHorizonsfit, then independently validated. Historical baseline isoriginalNov17.",
     "Native agreement checks implementation consistency, not absolute physical truth."
   ],
+  "native_legacy": {
+    "cases": 113524,
+    "max_abs_ms": 0.0013178505469113588,
+    "worst": {
+      "ms": 94793145123,
+      "longitude": -180,
+      "latitude": -89.99991,
+      "height": -1000,
+      "error_ms": 0.0013178505469113588
+    },
+    "eop_max_arcsec": 0,
+    "interpolation_property_checks": 77
+  },
   "native_reconstructed": {
     "cases": 113524,
     "max_abs_ms": 0.0013178505469113588,
@@ -301,18 +314,5 @@
     "position_max_km": 8.940696716308594e-8,
     "velocity_max_km_s": 2.4868995751603507e-14,
     "coverage": "Every included Type2 record boundary, exact and ±1microsecond"
-  },
-  "native_legacy": {
-    "cases": 113524,
-    "max_abs_ms": 0.0013178505469113588,
-    "worst": {
-      "ms": 94793145123,
-      "longitude": -180,
-      "latitude": -89.99991,
-      "height": -1000,
-      "error_ms": 0.0013178505469113588
-    },
-    "eop_max_arcsec": 0,
-    "interpolation_property_checks": 77
   }
 }

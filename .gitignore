@@ -4,3 +4,4 @@ __pycache__/
 test-cache/
 
 research/pck/scratch/
+# Failed/successful candidate scratch is retained as Actions audit artifacts.

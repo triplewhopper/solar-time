@@ -1,0 +1,5 @@
+numpy==2.5.5
+pyerfa==2.0.1.5
+jplephem==2.24
+skyfield==1.55
+certifi==2026.10.23

@@ -4,8 +4,10 @@ from datetime import datetime,timezone,timedelta
 from jplephem.pck import PCK
 from skyfield.functions import rot_x,rot_z
 root=Path('work/eop-followup')
+config=json.loads((root/'config.json').read_text()) if (root/'config.json').exists() else {}
 rows=np.array([[float(x) for x in l.split('$')[0].split(',') if x.strip()] for l in Path('work/horizons-original/latest.long').read_text().splitlines() if l.strip()[:1].isdigit()])
-k=PCK.open('work/precision-audit/earth_000101_270214_261118.bpc')
+kernel_path=config.get('kernel_path','work/precision-audit/earth_000101_270214_261118.bpc')
+k=PCK.open(kernel_path)
 AS=math.pi/(180*3600)
 def interp(mjd,kind):
  i=np.searchsorted(rows[:,0],mjd,side='right')-1;i=max(1,min(len(rows)-3,i));t=(mjd-rows[i,0])/(rows[i+1,0]-rows[i,0])

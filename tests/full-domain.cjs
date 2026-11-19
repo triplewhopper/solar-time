@@ -2,7 +2,7 @@
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),path=require('path'),zlib=require('zlib');
 const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p)),c={};vm.createContext(c);
 for(const f of ['vendor/erfa.min.js','solar-core.js'])vm.runInContext(read(f).toString(),c);
-const b=read('data/de441-solar.bsp'),data=JSON.parse(read('data/eop.json')),M=c.SolarPrecision,engine=new M.Engine(b.buffer.slice(b.byteOffset,b.byteOffset+b.length),data,c.ERFA);
+const b=read('data/de441-solar.bsp'),data=require('./snapshot.cjs')(),M=c.SolarPrecision,engine=new M.Engine(b.buffer.slice(b.byteOffset,b.byteOffset+b.length),data,c.ERFA);
 const wrap=(a,b)=>((a-b+43200)%86400+86400)%86400-43200;
 const native=JSON.parse(zlib.gunzipSync(read('tests/native-domain.json.gz')));
 let nativeMax=0,nativeWorst=null;const counts={};
