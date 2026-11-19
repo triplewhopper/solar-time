@@ -1,17 +1,17 @@
 {
-  "checked_at": "2026-11-19T07:23:36.568013+00:00",
+  "checked_at": "2026-11-19T07:29:54.967981+00:00",
   "ascii_observed": "2026-11-18",
   "ascii_sha256": "9b9feb3d86223dc7641c7f71d751e67ac5f1cfdfe382861e4bb5ef0eea14095d",
   "pck_file": "earth_000101_270214_261118.bpc",
   "pck_sha256": "be55272f1c98da612196a9ce08b1131a6559c0262dc127079f0fb3c113b0293e",
   "installed_release": "2026-11-18（JPL原始）",
-  "workflow_run": null,
-  "status": "unchanged",
+  "workflow_run": "44479641420",
+  "status": "validated",
   "verification": {
     "source_sha256": "9b9feb3d86223dc7641c7f71d751e67ac5f1cfdfe382861e4bb5ef0eea14095d",
     "horizons_eop_file": "eop.261118.p270214",
     "native_cases": 113524,
-    "native_max_us": 1.3178505469113588,
+    "native_max_us": 1.3166718417778611,
     "horizons_cases": 1020,
     "horizons_max_us": 1.7484126146882772,
     "worst": {
@@ -22,7 +22,7 @@
       "error_us": 1.7484126146882772
     },
     "threshold_us": 10,
-    "scope": "Daily recovery interval, fresh boundary/polar/random probes and independent full-domain native checks; not exhaustive continuous-domain proof"
+    "scope": "Daily recovery interval, fresh boundary/polar probes and independent full-domain native checks; not exhaustive continuous-domain proof"
   },
   "release_path": "data/releases/2026-11-18-9b9feb3d8622"
 }

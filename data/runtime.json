@@ -1,12 +1,12 @@
 {
-  "eop_sha256": "86e764df9fb0b916abe81854df74f772ca791c75a28b020a931f7556cdc0a840",
-  "checked_at": "2026-11-19T07:23:36.568013+00:00",
+  "eop_sha256": "20d77c75b4105be63b921644b0a770880468f1eb0ccc004aae649a738719bb84",
+  "checked_at": "2026-11-19T07:29:54.967981+00:00",
   "release": "2026-11-18（JPL原始）",
   "verification": {
     "source_sha256": "9b9feb3d86223dc7641c7f71d751e67ac5f1cfdfe382861e4bb5ef0eea14095d",
     "horizons_eop_file": "eop.261118.p270214",
     "native_cases": 113524,
-    "native_max_us": 1.3178505469113588,
+    "native_max_us": 1.3166718417778611,
     "horizons_cases": 1020,
     "horizons_max_us": 1.7484126146882772,
     "worst": {
@@ -17,7 +17,7 @@
       "error_us": 1.7484126146882772
     },
     "threshold_us": 10,
-    "scope": "Daily recovery interval, fresh boundary/polar/random probes and independent full-domain native checks; not exhaustive continuous-domain proof"
+    "scope": "Daily recovery interval, fresh boundary/polar probes and independent full-domain native checks; not exhaustive continuous-domain proof"
   },
   "audit_url": "https://github.com/triplewhopper/solar-time/actions/workflows/update-eop.yml"
 }

@@ -172,7 +172,7 @@
     "source_sha256": "9b9feb3d86223dc7641c7f71d751e67ac5f1cfdfe382861e4bb5ef0eea14095d",
     "horizons_eop_file": "eop.261118.p270214",
     "native_cases": 113524,
-    "native_max_us": 1.3178505469113588,
+    "native_max_us": 1.3166718417778611,
     "horizons_cases": 1020,
     "horizons_max_us": 1.7484126146882772,
     "worst": {
@@ -183,7 +183,7 @@
       "error_us": 1.7484126146882772
     },
     "threshold_us": 10,
-    "scope": "Daily recovery interval, fresh boundary/polar/random probes and independent full-domain native checks; not exhaustive continuous-domain proof"
+    "scope": "Daily recovery interval, fresh boundary/polar probes and independent full-domain native checks; not exhaustive continuous-domain proof"
   },
   "report_snapshot": "2026-11-18 frozen regression fixture; current version in data/runtime.json"
 }
