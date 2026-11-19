@@ -36,6 +36,7 @@ jobs:
         id: plan
         run: python3 scripts/check-update.py
       - name: Test update decision gates
+        if: steps.plan.outputs.needs_validation == 'true'
         run: python3 -m unittest discover -s tests -p 'test_update_*.py'
       - uses: actions/setup-python@v5
         if: steps.plan.outputs.needs_validation == 'true'
@@ -59,7 +60,8 @@ jobs:
           node tests/reconstruction-tests.cjs
           node tests/spk-boundaries.cjs
           git restore data/validation.json tests/domain-errors.json.gz
-      - name: Apply the checked snapshot or retain unchanged data
+      - name: Apply the validated snapshot
+        if: steps.plan.outputs.needs_validation == 'true'
         env:
           ALGORITHM_CHANGED: ${{ steps.plan.outputs.algorithm_changed }}
         run: |
@@ -71,7 +73,8 @@ jobs:
       - name: Record the successfully validated algorithm
         if: steps.plan.outputs.needs_validation == 'true'
         run: python3 scripts/check-update.py --mark-passed
-      - name: Publish validated data and check timestamp
+      - name: Publish validated changes
+        if: steps.plan.outputs.needs_validation == 'true'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -81,6 +84,7 @@ jobs:
             git push origin HEAD:main
           fi
       - name: Request ordinary branch Pages build
+        if: steps.plan.outputs.needs_validation == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/pages-build.py
