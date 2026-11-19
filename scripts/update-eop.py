@@ -5,7 +5,10 @@ import argparse, gzip, hashlib, json, math, os, re, shutil, ssl, subprocess, sys
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-import certifi
+try:
+    import certifi
+except ImportError:
+    certifi = None
 
 ROOT = Path(__file__).resolve().parents[1]
 UTC = timezone.utc
@@ -20,7 +23,7 @@ def fetch(url, body=None, headers=None):
     request=urllib.request.Request(url, data=body, headers={'User-Agent':'solar-time-updater/1.0 (https://github.com/triplewhopper/solar-time)', **(headers or {})})
     for attempt in range(3):
         try:
-            with urllib.request.urlopen(request, timeout=120, context=ssl.create_default_context(cafile=certifi.where())) as r:
+            with urllib.request.urlopen(request, timeout=120, context=ssl.create_default_context(cafile=certifi.where() if certifi else None)) as r:
                 return r.read()
         except Exception:
             if attempt==2: raise
@@ -106,13 +109,23 @@ def check_reference_version(result, expected):
         raise ValueError(f'Horizons/PCK version mismatch: expected {expected}, got {match[1] if match else "missing"}; keep installed snapshot')
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--work',type=Path,default=ROOT/'test-cache/update');ap.add_argument('--force',action='store_true');ap.add_argument('--dry-run',action='store_true');args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--work',type=Path,default=ROOT/'test-cache/update');ap.add_argument('--prepared',type=Path);ap.add_argument('--force',action='store_true');ap.add_argument('--dry-run',action='store_true');args=ap.parse_args()
     args.work=args.work.resolve();args.work.mkdir(parents=True,exist_ok=True)
     installed=json.loads((ROOT/'data/eop.json').read_text());current=installed['reconstructed']
-    checked=datetime.now(UTC).isoformat();raw=fetch(ASCII_URL);raw_date,raw_rows=parse_ascii(raw)
+    checked=datetime.now(UTC).isoformat()
+    if args.prepared:
+        prepared=args.prepared.resolve();plan=json.loads((prepared/'plan.json').read_text())
+        if digest((ROOT/'data/eop.json').read_bytes())!=plan['installed_eop_sha256']: raise ValueError('Installed snapshot changed after preflight')
+        name=plan['pck_file']
+        if not re.fullmatch(r'earth_000101_\d{6}_\d{6}\.bpc',name): raise ValueError('Invalid prepared kernel name')
+        raw=(prepared/'latest.long').read_bytes();payload=(prepared/name).read_bytes()
+        if digest(raw)!=plan['ascii_sha256'] or digest(payload)!=plan['pck_sha256']: raise ValueError('Prepared inputs changed after preflight')
+        end=date(plan['end']);observed=date(plan['observed'])
+    else:
+        raw=fetch(ASCII_URL);index=fetch(PCK_BASE).decode();name,end,observed=latest_kernel(index);payload=fetch(PCK_BASE+name)
+    raw_date,raw_rows=parse_ascii(raw)
     if raw_date<date(installed['legacy']['last_observation_utc'].replace('Z','+00:00')): raise ValueError('ASCII mirror would roll back the installed source date')
-    index=fetch(PCK_BASE).decode();name,end,observed=latest_kernel(index)
-    payload=fetch(PCK_BASE+name);kernel_sha=digest(payload)
+    kernel_sha=digest(payload)
     if not payload.startswith(b'DAF/PCK'): raise ValueError('Invalid PCK download')
     info={'checked_at':checked,'ascii_observed':raw_date.date().isoformat(),'ascii_sha256':digest(raw),'pck_file':name,'pck_sha256':kernel_sha,'installed_release':current['release_label'],'workflow_run':os.environ.get('GITHUB_RUN_ID')}
     if not args.force and kernel_sha==current.get('pck_sha256',current['source_sha256']) and digest(raw)==current['base_sha256']:

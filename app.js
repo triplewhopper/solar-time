@@ -1,11 +1,12 @@
 'use strict';
 (()=>{
  const $=id=>document.getElementById(id),M=SolarPrecision;
- let engine,live=true,forceError=false,validation=null,runtime=null,geoid=null;
+ let engine,live=true,forceError=false,validation=null,runtime=null,geoid=null,geoidReady=null;
  const source=()=>$('eopSource').value;
  const snapshotName=()=>engine.data.reconstructed.source_file_obtained?'JPL原始快照':'PCK恢复快照';
  const coords=['lonD','lonM','lonS','lonH','latD','latM','latS','latH','height'];
  const manualIDs=['dut1','tai','xp','yp','dx','dy'];
+ function loadGeoid(){if(geoid)return Promise.resolve(geoid);if(!geoidReady)geoidReady=GeoidGrid.load().then(value=>{geoid=value;return value;}).catch(error=>{geoidReady=null;throw error;});return geoidReady;}
  function setNow(){const c=M.clock(Date.now()+32400000);$('date').value=c.date;$('time').value=c.time;}
  function showClock(prefix,ms){const c=M.clock(ms);$(prefix+'Clock').textContent=c.time;$(prefix+'Date').textContent=c.date;}
  function clearResults(){for(const id of ['meanOffset','eot','meanClock','trueClock'])$(id).textContent='—';$('trueOffset').textContent='等待有效输入';$('direction').textContent='以东经 135° 为东九区标准子午线。';$('meanDate').textContent='含 UT1−UTC';$('trueDate').textContent='由太阳视时角计算';$('coordinate').textContent='输入经纬度后，结果会自动更新。';$('eopStatus').textContent='等待有效输入。';$('stabilityNote').textContent='';}
@@ -54,8 +55,8 @@
   for(let i=1;i<rows.length;i++){const delta=rows[i][3]-rows[i-1][3],epoch=(rows[i][0]-40587)*86400000;if(Math.abs(delta)>0.5&&epoch>leaps.at(-1)[0])leaps.push([epoch,leaps.at(-1)[1]+Math.round(delta)]);}
   engine.data={...engine.data,rows,leaps,source:'用户导入 IERS 文件'};$('eopSource').value='iers';changeSource();
  }
- const locationInput=LocationInput.bind({button:$('locate'),status:$('locationStatus'),field:$,onFilled:render});
- coords.filter(id=>id!=='height').forEach(id=>$(id).addEventListener('input',()=>locationInput.cancel()));
+ const locationInput=LocationInput.bind({button:$('locate'),status:$('locationStatus'),field:$,onFilled:render,toElevation:async(height,latitude,longitude)=>height-(await loadGeoid()).undulation(latitude,longitude)});
+ coords.forEach(id=>$(id).addEventListener('input',()=>locationInput.cancel()));
  coords.forEach(id=>$(id).addEventListener('input',render));manualIDs.forEach(id=>$(id).addEventListener('input',render));
  $('eopSource').addEventListener('change',changeSource);$('extrapolate').addEventListener('change',render);
  for(const id of ['date','time'])$(id).addEventListener('input',()=>{live=false;render();});
@@ -82,7 +83,7 @@
     if(hash!==manifest.eop_sha256)throw Error('新版数据正在同步，暂不切换快照。');
     [buffer,validation]=await Promise.all([responses[0].arrayBuffer(),responses[2].json()]);data=JSON.parse(new TextDecoder().decode(raw));runtime=manifest;
    }
-   if(!geoid)geoid=await GeoidGrid.load();
+   await loadGeoid();
    engine=new M.Engine(buffer,data,ERFA);
    $('eopSource').querySelector('option[value="reconstructed"]').textContent=snapshotName()+' · '+data.reconstructed.release_label;
    $('eopSource').querySelector('option[value="legacy"]').textContent='JPL 原始格式 · '+data.legacy.release_label;
