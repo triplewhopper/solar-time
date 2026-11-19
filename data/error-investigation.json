@@ -1,5 +1,5 @@
 {
-  "status": "Independently reconstructed Nov18-equivalent EOP parameters from official Nov18PCK; original Nov18ASCII still notdownloaded. Fullheldoutcomparison nowmicrosecondlevel includingforecastnear-poles.",
+  "status": "Original Nov18 ASCII obtained after the public mirror caught up; all 137 independently PCK-recovered records agree with the original. Actions now validates and updates versioned snapshots.",
   "official_sources": {
     "horizons": "https://ssd.jpl.nasa.gov/horizons/manual.html",
     "jpl_eop2": "https://eop-external.jpl.nasa.gov/eop2/261118_190003-marge_eop2.long",

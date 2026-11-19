@@ -146,7 +146,7 @@
     "original_ascii_obtained": false
   },
   "runtime": "All arithmetic local; no geolocation, coordinate upload, storage or calculation API",
-  "remaining": "No byte-identical original Nov18ASCII was obtained. Numerical equivalence is independently tested, not a physical accuracy guarantee. Far-future fixedEOP does not forecast realEarthrotation.",
+  "remaining": "Whether an original ASCII was obtained is recorded per snapshot. The Nov18 original is now obtained and matches all 137 recovered records. Remaining microsecond numerical residuals are not fully decomposed; agreement is not a physical accuracy guarantee. Far-future fixed EOP does not forecast real Earth rotation.",
   "current_snapshot": {
     "release_label": "2026-11-18（JPL原始）",
     "source_kind": "original_ascii_verified_against_independent_pck_recovery",
