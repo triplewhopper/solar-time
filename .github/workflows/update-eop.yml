@@ -3,11 +3,21 @@ on:
   schedule:
     - cron: '37 19 * * *'
   workflow_dispatch:
-    inputs:
-      force:
-        description: Revalidate the current official snapshot even when unchanged
-        type: boolean
-        default: false
+  push:
+    branches: [main]
+    paths:
+      - 'solar-core.js'
+      - 'app.js'
+      - 'location-input.js'
+      - 'geoid.js'
+      - 'vendor/**'
+      - 'scripts/**'
+      - 'research/pck/scripts/**'
+      - 'tests/**'
+      - 'data/de441-solar.bsp'
+      - 'data/egm2008-5.pgm.gz'
+      - 'data/geoid.json'
+      - '.github/workflows/update-eop.yml'
 permissions:
   contents: write
   pages: write
@@ -20,19 +30,28 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Check official data and algorithm changes first
+        id: plan
+        run: python3 scripts/check-update.py
+      - name: Test update decision gates
+        run: python3 -m unittest discover -s tests -p 'test_update_*.py'
       - uses: actions/setup-python@v5
+        if: steps.plan.outputs.needs_validation == 'true'
         with:
           python-version: '3.12'
           cache: pip
           cache-dependency-path: scripts/update-requirements.txt
       - uses: actions/setup-node@v4
+        if: steps.plan.outputs.needs_validation == 'true'
         with:
           node-version: '22'
-      - name: Install numerical libraries
-        run: python -m pip install -r scripts/update-requirements.txt
-      - name: Test updater failure gates
-        run: python -m unittest discover -s tests -p 'test_update_*.py'
+      - name: Install numerical libraries only for changed inputs
+        if: steps.plan.outputs.needs_validation == 'true'
+        run: python3 -m pip install -r scripts/update-requirements.txt
       - name: Replay immutable November 18 regression fixtures
+        if: steps.plan.outputs.needs_validation == 'true'
         run: |
           node tests/full-domain.cjs
           node tests/legacy-tests.cjs
@@ -40,15 +59,18 @@ jobs:
           node tests/reconstruction-tests.cjs
           node tests/spk-boundaries.cjs
           git restore data/validation.json tests/domain-errors.json.gz
-      - name: Fetch and validate candidate snapshot
+      - name: Apply the checked snapshot or retain unchanged data
         env:
-          FORCE: ${{ inputs.force }}
+          ALGORITHM_CHANGED: ${{ steps.plan.outputs.algorithm_changed }}
         run: |
-          if [ "$FORCE" = true ]; then
-            python scripts/update-eop.py --force
+          if [ "$ALGORITHM_CHANGED" = true ]; then
+            python3 scripts/update-eop.py --prepared test-cache/update/preflight --force
           else
-            python scripts/update-eop.py
+            python3 scripts/update-eop.py --prepared test-cache/update/preflight
           fi
+      - name: Record the successfully validated algorithm
+        if: steps.plan.outputs.needs_validation == 'true'
+        run: python3 scripts/check-update.py --mark-passed
       - name: Publish validated data and check timestamp
         run: |
           git config user.name 'github-actions[bot]'
@@ -61,9 +83,9 @@ jobs:
       - name: Request ordinary branch Pages build
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python scripts/pages-build.py
-      - name: Retain audit evidence including failed candidates
-        if: always()
+        run: python3 scripts/pages-build.py
+      - name: Retain changed-input audit evidence
+        if: always() && steps.plan.outputs.needs_validation == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: eop-audit-${{ github.run_id }}
