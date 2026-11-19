@@ -129,11 +129,7 @@ def main():
     if not payload.startswith(b'DAF/PCK'): raise ValueError('Invalid PCK download')
     info={'checked_at':checked,'ascii_observed':raw_date.date().isoformat(),'ascii_sha256':digest(raw),'pck_file':name,'pck_sha256':kernel_sha,'installed_release':current['release_label'],'workflow_run':os.environ.get('GITHUB_RUN_ID')}
     if not args.force and kernel_sha==current.get('pck_sha256',current['source_sha256']) and digest(raw)==current['base_sha256']:
-        previous=json.loads((ROOT/'data/update-status.json').read_text()) if (ROOT/'data/update-status.json').exists() else {}
-        info={**previous,**info,'status':'unchanged'}
-        if not args.dry_run:
-            write_json(ROOT/'data/update-status.json',info);runtime_manifest(info)
-        print('Official snapshot unchanged; calculation data retained.');return
+        print('Official snapshot unchanged; no files modified.');return
     if observed<date(current['last_observation_utc'].replace('Z','+00:00')): raise ValueError('PCK would roll back the observation date')
     if (end-observed).days not in range(1,181): raise ValueError('Unexpected forecast horizon')
     # This updater deliberately uses the independently verified PCK route even if ASCII is newer.

@@ -69,7 +69,7 @@
  async function getJSON(url){const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw Error('更新信息暂时无法加载');return r.json();}
  function updateInfo(){
   if(!runtime)return;
-  $('updateStatus').textContent='当前快照：'+runtime.release+' · 最后成功检查：'+new Date(runtime.checked_at).toLocaleString('zh-CN',{timeZone:'Asia/Tokyo',hour12:false})+'（UTC+9）。';
+  $('updateStatus').textContent='当前快照：'+runtime.release+' · 本版本检查时间：'+new Date(runtime.checked_at).toLocaleString('zh-CN',{timeZone:'Asia/Tokyo',hour12:false})+'（UTC+9）。';
  }
  async function boot(nextRuntime){
   try{
