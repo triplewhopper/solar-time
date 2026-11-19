@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-11-19T08:35:10.213231+00:00",
+  "checked_at": "2026-11-19T08:36:36.273752+00:00",
   "ascii_observed": "2026-11-18",
   "ascii_sha256": "9b9feb3d86223dc7641c7f71d751e67ac5f1cfdfe382861e4bb5ef0eea14095d",
   "pck_file": "earth_000101_270214_261118.bpc",
   "pck_sha256": "be55272f1c98da612196a9ce08b1131a6559c0262dc127079f0fb3c113b0293e",
   "installed_release": "2026-11-18（JPL原始）",
-  "workflow_run": "44488495913",
-  "status": "validated",
+  "workflow_run": "44488614694",
+  "status": "unchanged",
   "verification": {
     "source_sha256": "9b9feb3d86223dc7641c7f71d751e67ac5f1cfdfe382861e4bb5ef0eea14095d",
     "horizons_eop_file": "eop.261118.p270214",
