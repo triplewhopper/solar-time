@@ -1,5 +1,5 @@
 {
-  "model": "DE441 + legacy IAU1976/1980 + original JPL EOP ITRF93 (2026-11-17), seven-point blended interpolation; no fitted offsets",
+  "model": "DE441 + IAU1976/1980 + independently PCK-reconstructed Nov18-equivalent EOP tail, original Nov17 historical baseline; seven-point blend; no fitted offsets",
   "scope": "Stratified, random, daily, boundary and stress coverage of every declared input dimension; not exhaustive proof over continuous inputs",
   "domain": {
     "longitude": [
@@ -36,12 +36,26 @@
       ]
     }
   },
-  "ephemeris": {
-    "name": "DE441",
-    "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de441_part-2.bsp",
-    "sha256": "7ad6aa4b2afc1e9e85c2f49d370dcc4dc8eee06bda5e43608ee588d9f6f81c13"
+  "default_source": "PCK reconstructed Nov18-equivalent snapshot; NOT a downloaded original Nov18ASCII file",
+  "reconstructed": {
+    "release_label": "2026-11-18（PCK恢复）",
+    "source_kind": "reconstructed_from_official_pck_not_original_ascii",
+    "source_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/earth_000101_270214_261118.bpc",
+    "source_sha256": "be55272f1c98da612196a9ce08b1131a6559c0262dc127079f0fb3c113b0293e",
+    "base_sha256": "9010548bcfd1043fa7075133e3494dba8998693c0cd404ccdd04c7d7bde31b03",
+    "derived_range": [
+      "2026-10-01",
+      "2027-02-14"
+    ],
+    "last_observation_utc": "2026-11-18T00:00:00Z",
+    "evaluation_end_mjd": 61449,
+    "support_end_mjd": 61450,
+    "record_count": 137,
+    "window_count": 70,
+    "overlap_conflicts": 0,
+    "source_file_obtained": false
   },
-  "legacy_eop": {
+  "legacy_original": {
     "source_url": "https://ssd.jpl.nasa.gov/ftp/ssd/latest.long",
     "source_index": "https://ssd.jpl.nasa.gov/ftp/ssd/",
     "sha256": "9010548bcfd1043fa7075133e3494dba8998693c0cd404ccdd04c7d7bde31b03",
@@ -102,56 +116,35 @@
     "retrieved": "2026-11-19T02:22:43.954518+00:00",
     "sha256": "51cb9676d9c4775c4d344b328bc3eb1ac3940b089ce4b659ccac883637d09dd6"
   },
+  "ephemeris": {
+    "name": "DE441",
+    "sha256": "7ad6aa4b2afc1e9e85c2f49d370dcc4dc8eee06bda5e43608ee588d9f6f81c13",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de441_part-2.bsp"
+  },
   "erfa": {
     "source": "https://github.com/THRASTRO/sofa.js",
     "sha256": "390883d7d4072c528c7e8a4e961f2a40234d564079e44dc5b8965e367fcf08da",
     "license": "vendor/LICENSE-ERFA-JS.txt"
   },
-  "runtime_privacy": "Local arithmetic, no geolocation, storage, coordinate upload or calculation API",
-  "validation": {
-    "horizons": 42200,
-    "native_modern": {
-      "cases": 113524,
-      "max_abs_ms": 0.0012786331353709102,
-      "worst": {
-        "ms": 94793145123,
-        "longitude": -180,
-        "latitude": -89.99991,
-        "height": -1000,
-        "stratum": "daily",
-        "error_ms": 0.0012786331353709102
-      },
-      "strata": {
-        "daily": 20044,
-        "spk-boundary": 58440,
-        "random-holdout": 32768,
-        "corner": 224,
-        "manual-stress": 2048
-      }
-    },
-    "native_legacy": {
-      "cases": 113524,
-      "max_abs_ms": 0.0013178505469113588,
-      "worst": {
-        "ms": 94793145123,
-        "longitude": -180,
-        "latitude": -89.99991,
-        "height": -1000,
-        "error_ms": 0.0013178505469113588
-      },
-      "eop_max_arcsec": 0,
-      "interpolation_property_checks": 77
-    },
-    "spk_boundaries": {
-      "cases": 52596,
-      "position_max_km": 8.940696716308594e-08,
-      "velocity_max_km_s": 2.4868995751603507e-14,
-      "coverage": "Every included Type2 record boundary, exact and ±1microsecond"
-    },
-    "boundaries": {
-      "checks": 91,
-      "leap_events": 25
-    }
+  "reconstruction_validation": {
+    "record_count": 137,
+    "windows": 70,
+    "overlap_conflicts": 0,
+    "known_control_records": 32,
+    "known_control_fields": 160,
+    "known_control_failures": 0,
+    "heldout_pck_rotations": 544,
+    "heldout_pck_max_axis_mas": [
+      5.19554247477667e-05,
+      3.235856882882126e-05,
+      0.03494543376285166
+    ],
+    "endpoint_cases": 32,
+    "endpoint_max_error_us": 0.6248592399060726,
+    "effective_freeze_mjd": 61449,
+    "support_end_mjd": 61450,
+    "original_ascii_obtained": false
   },
-  "remaining": "Public legacy file is November17, reference usesNovember18. Exact archived reference input has not been obtained. Microsecond historical residuals are not a claim of bitwise equivalence or physical accuracy."
+  "runtime": "All arithmetic local; no geolocation, coordinate upload, storage or calculation API",
+  "remaining": "No byte-identical original Nov18ASCII was obtained. Numerical equivalence is independently tested, not a physical accuracy guarantee. Far-future fixedEOP does not forecast realEarthrotation."
 }

@@ -60,16 +60,19 @@ function legacyInterpolate(rows,mjd){
  const a=local(lo-3),b=local(lo-2);const out=a.map((v,k)=>(1-t)*v+t*b[k]);out[0]=mjd;out[4]=rows[lo][4];return out;
 }
 class Engine {
- constructor(buffer,data,erfa){this.spk=new SPK(buffer);this.data=data;this.erfa=erfa;}
+ constructor(buffer,data,erfa){this.spk=new SPK(buffer);this.data=data;this.erfa=erfa;if(data.reconstructed){if(data.reconstructed.base_sha256!==data.legacy.sha256)throw Error('恢复快照的基准文件不匹配。');const records=new Map(data.legacy.rows.map(r=>[r[0],r]));for(const r of data.reconstructed.patch_records)records.set(r[0],r);this.reconstructedRows=[...records.values()].sort((a,b)=>a[0]-b[0]);}}
  tai(ms){let out=null;for(const [epoch,n] of this.data.leaps){if(ms>=epoch)out=n;else break;}if(out===null)throw Error('支持 1972 年起的 UTC 日期。');return out;}
- eop(ms,manual,source='legacy',extrapolate=false){
-  if(manual){for(const key of ['dut1','xp','yp','dx','dy','tai'])if(!Number.isFinite(manual[key]))throw Error('请完整填写手动地球自转参数。');if(Math.abs(manual.dut1)>10||Math.abs(manual.xp)>10||Math.abs(manual.yp)>10||Math.abs(manual.dx)>1000||Math.abs(manual.dy)>1000||!Number.isInteger(manual.tai)||manual.tai<10||manual.tai>100)throw Error('手动修正参数超出允许范围。');return {...manual,dpsi:source==='legacy'?manual.dx:undefined,deps:source==='legacy'?manual.dy:undefined,status:'manual',missingCIP:false};}
-  if(source==='legacy'){
-   const j=this.data.legacy;if(!j)throw Error('未加载 JPL 原始格式数据。');
-   const mjd=ms/86400000+40587,rows=j.rows,outside=mjd<rows[0][0]||mjd>rows.at(-1)[0];
-   if(outside&&!extrapolate)throw Error('日期超出原始格式数据范围。请选择其他数据、填写手动参数，或明确启用末值外推。');
-   const v=legacyInterpolate(rows,Math.max(rows[0][0],Math.min(rows.at(-1)[0],mjd))),tai=this.tai(ms);
-   return {tai,dut1:tai-v[3],xp:v[1]/1000,yp:v[2]/1000,dx:v[5],dy:v[6],dpsi:v[5],deps:v[6],status:outside?'LX':ms>Date.parse(j.last_observation_utc)?'LP':'L',extrapolated:outside,missingCIP:false,release:j.release_label};
+ eop(ms,manual,source='reconstructed',extrapolate=false){
+  const legacyMode=source==='legacy'||source==='reconstructed';
+  if(manual){for(const key of ['dut1','xp','yp','dx','dy','tai'])if(!Number.isFinite(manual[key]))throw Error('请完整填写手动地球自转参数。');if(Math.abs(manual.dut1)>10||Math.abs(manual.xp)>10||Math.abs(manual.yp)>10||Math.abs(manual.dx)>1000||Math.abs(manual.dy)>1000||!Number.isInteger(manual.tai)||manual.tai<10||manual.tai>100)throw Error('手动修正参数超出允许范围。');return {...manual,dpsi:legacyMode?manual.dx:undefined,deps:legacyMode?manual.dy:undefined,status:'manual',missingCIP:false};}
+  if(legacyMode){
+   const derived=source==='reconstructed',j=derived?this.data.reconstructed:this.data.legacy;if(!j)throw Error('未加载所选修正数据。');
+   const mjd=ms/86400000+40587,rows=derived?this.reconstructedRows:j.rows,end=derived?j.evaluation_end_mjd:rows.at(-1)[0],outside=mjd<rows[0][0]||mjd>end;
+   if(outside&&!extrapolate)throw Error('日期超出所选数据的有效范围。请选择其他数据、填写手动参数，或明确启用末值外推。');
+   // The Feb14 support node is retained in interpolation; the validated
+   // Horizons evaluation/freeze boundary is Feb13. These are distinct.
+   const v=legacyInterpolate(rows,Math.max(rows[0][0],Math.min(end,mjd))),tai=this.tai(ms),prefix=derived?'R':'L';
+   return {tai,dut1:tai-v[3],xp:v[1]/1000,yp:v[2]/1000,dx:v[5],dy:v[6],dpsi:v[5],deps:v[6],status:outside?prefix+'X':ms>Date.parse(j.last_observation_utc)?prefix+'P':prefix,extrapolated:outside,missingCIP:false,release:j.release_label,derived};
   }
   if(source==='jpl'){
    const j=this.data.jpl;if(!j)throw Error('未加载 JPL 地球自转数据。');
@@ -90,8 +93,8 @@ class Engine {
   return {dut1,xp:inter(1),yp:inter(2),dx:missingCIP?0:inter(4),dy:missingCIP?0:inter(5),tai,
    status:a[6]==='P'||b[6]==='P'?'P':a[6]==='B'&&b[6]==='B'?'B':'A',missingCIP,error:Math.max(a[7]||0,b[7]||0)};
  }
- calculate({ms,longitude,latitude,height=0,manual=null,source='legacy',extrapolate=false}){
-  if(!['legacy','jpl','iers'].includes(source))throw Error('未知地球自转数据来源。');
+ calculate({ms,longitude,latitude,height=0,manual=null,source='reconstructed',extrapolate=false}){
+  if(!['reconstructed','legacy','jpl','iers'].includes(source))throw Error('未知地球自转数据来源。');
   if(!Number.isFinite(ms)||!Number.isFinite(longitude)||Math.abs(longitude)>180||!Number.isFinite(latitude)||Math.abs(latitude)>=90||!Number.isFinite(height)||height< -1000||height>100000)throw Error('请输入有效位置；纬度须在南北极之间，高度范围 −1000 至 100000 米。');
   if(ms<Date.UTC(1972,0,1,0,15)||ms>Date.UTC(2099,11,31,14,59,59,999))throw Error('计算范围（东九区）：1972-01-01 09:15:00 至 2099-12-31 23:59:59.999。首日预留太阳光行时。');
   const erfa=this.erfa,eop=this.eop(ms,manual,source,extrapolate),utc=(ms-J2000MS)/86400000,tt=utc+(eop.tai+32.184)/DAY,ut1=utc+eop.dut1/DAY;
@@ -100,7 +103,7 @@ class Engine {
   const xyz=gc[1],dtr=erfa.dtdb(J2000,tt,mod(ms/86400000+eop.dut1/DAY,1),lon,Math.hypot(xyz[0],xyz[1])/1000,xyz[2]/1000),tdb=tt+dtr/DAY;
   const earth=this.spk.earth(tdb),sun=this.spk.state(0,10,tdb),ebpv=[scale(earth[0],1/AU),scale(earth[1],DAY/AU)],ehp=scale(sub(earth[0],sun[0]),1/AU);
   let astrom,station;
-  if(source==='legacy'){
+  if(source==='legacy'||source==='reconstructed'){
    const precession=erfa.pmat76(J2000,tdb),[npsi,neps]=erfa.nut80(J2000,tdb),eps=erfa.obl80(J2000,tdb);
    const bpn=erfa.rxr(erfa.numat(eps,npsi+eop.dpsi*AS/1000,neps+eop.deps*AS/1000),precession);
    const gast=erfa.anp(erfa.gmst82(J2000,ut1)+erfa.eqeq94(J2000,tdb)+eop.dpsi*AS/1000*Math.cos(eps));

@@ -1,0 +1,3072 @@
+{
+  "provenance": "ReconstructedfromofficialNov18PCKrotationsusinglegacyIAU76/80,FolknertrueobliquityEqEq,SPICELSKtime,andcubicLagrangeEOPinterpolation. NotdownloadedoriginalEOPASCII. NoHorizonsobservablesusedinfit. Nov17ASCIIusedasstartingguess.",
+  "PCK_file": "work/precision-audit/earth_000101_270214_261118.bpc",
+  "PCK_sha256": "be55272f1c98da612196a9ce08b1131a6559c0262dc127079f0fb3c113b0293e",
+  "baseline_file": "work/horizons-original/latest.long",
+  "baseline_sha256": "9010548bcfd1043fa7075133e3494dba8998693c0cd404ccdd04c7d7bde31b03",
+  "derived_start": "2026-10-01",
+  "derived_end": "2027-02-14",
+  "baseline_preserved_outside_derived_range": true,
+  "column_names": [
+    "mjd_utc",
+    "xp_mas",
+    "yp_mas",
+    "tai_minus_ut1_seconds",
+    "tai_minus_utc_seconds",
+    "dpsi_mas",
+    "deps_mas"
+  ],
+  "record_quantum": [
+    null,
+    0.01,
+    0.01,
+    1e-06,
+    1,
+    0.01,
+    0.01
+  ],
+  "record_count": 137,
+  "window_count": 70,
+  "conflict_count": 0,
+  "records": [
+    {
+      "utc": "2026-10-01T00:00:00+00:00",
+      "record": [
+        61314.0,
+        169.01,
+        320.38,
+        37.022773,
+        37.0,
+        -123.64,
+        -10.55
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 3,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002181746967177694,
+        "max_ut1_distance_to_quantum_us": 0.2721809622130422
+      },
+      "chosen_window": 1
+    },
+    {
+      "utc": "2026-10-02T00:00:00+00:00",
+      "record": [
+        61315.0,
+        167.75,
+        319.68,
+        37.02337,
+        37.0,
+        -123.31,
+        -10.56
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004521987650728282,
+        "max_ut1_distance_to_quantum_us": 0.08787947791688566
+      },
+      "chosen_window": 1
+    },
+    {
+      "utc": "2026-10-03T00:00:00+00:00",
+      "record": [
+        61316.0,
+        167.02,
+        319.04,
+        37.023901,
+        37.0,
+        -122.86,
+        -10.56
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0001581800040150644,
+        "max_ut1_distance_to_quantum_us": 0.03395381753534821
+      },
+      "chosen_window": 2
+    },
+    {
+      "utc": "2026-10-04T00:00:00+00:00",
+      "record": [
+        61317.0,
+        166.32,
+        318.57,
+        37.024483,
+        37.0,
+        -122.44,
+        -10.57
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002710681146320614,
+        "max_ut1_distance_to_quantum_us": 0.19729239397747733
+      },
+      "chosen_window": 3
+    },
+    {
+      "utc": "2026-10-05T00:00:00+00:00",
+      "record": [
+        61318.0,
+        165.38,
+        318.03,
+        37.025246,
+        37.0,
+        -122.13,
+        -10.6
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00028278950418750195,
+        "max_ut1_distance_to_quantum_us": 0.20240950959760085
+      },
+      "chosen_window": 2
+    },
+    {
+      "utc": "2026-10-06T00:00:00+00:00",
+      "record": [
+        61319.0,
+        164.23,
+        317.61,
+        37.026268,
+        37.0,
+        -121.93,
+        -10.61
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002721209141119808,
+        "max_ut1_distance_to_quantum_us": 0.06467228530482316
+      },
+      "chosen_window": 3
+    },
+    {
+      "utc": "2026-10-07T00:00:00+00:00",
+      "record": [
+        61320.0,
+        163.19,
+        317.22,
+        37.027527,
+        37.0,
+        -121.78,
+        -10.55
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0007606423039619099,
+        "max_ut1_distance_to_quantum_us": 0.20465165562200127
+      },
+      "chosen_window": 4
+    },
+    {
+      "utc": "2026-10-08T00:00:00+00:00",
+      "record": [
+        61321.0,
+        162.52,
+        317.33,
+        37.028945,
+        37.0,
+        -121.66,
+        -10.37
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004644816775953056,
+        "max_ut1_distance_to_quantum_us": 0.24388714336964767
+      },
+      "chosen_window": 4
+    },
+    {
+      "utc": "2026-10-09T00:00:00+00:00",
+      "record": [
+        61322.0,
+        161.7,
+        317.86,
+        37.030414,
+        37.0,
+        -121.61,
+        -10.11
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002829428521488312,
+        "max_ut1_distance_to_quantum_us": 0.2511273748950771
+      },
+      "chosen_window": 4
+    },
+    {
+      "utc": "2026-10-10T00:00:00+00:00",
+      "record": [
+        61323.0,
+        160.7,
+        318.23,
+        37.031881,
+        37.0,
+        -121.66,
+        -9.9
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.000642706444593883,
+        "max_ut1_distance_to_quantum_us": 0.0025076616338992608
+      },
+      "chosen_window": 5
+    },
+    {
+      "utc": "2026-10-11T00:00:00+00:00",
+      "record": [
+        61324.0,
+        159.65,
+        318.63,
+        37.03327,
+        37.0,
+        -121.82,
+        -9.85
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00043059447937005056,
+        "max_ut1_distance_to_quantum_us": 0.08865621481390917
+      },
+      "chosen_window": 6
+    },
+    {
+      "utc": "2026-10-12T00:00:00+00:00",
+      "record": [
+        61325.0,
+        158.19,
+        318.69,
+        37.034523,
+        37.0,
+        -122.09,
+        -10.0
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002740055285362518,
+        "max_ut1_distance_to_quantum_us": 0.23486065714450888
+      },
+      "chosen_window": 6
+    },
+    {
+      "utc": "2026-10-13T00:00:00+00:00",
+      "record": [
+        61326.0,
+        156.41,
+        318.07,
+        37.035549,
+        37.0,
+        -122.39,
+        -10.24
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0006001708133209372,
+        "max_ut1_distance_to_quantum_us": 0.01310029773549104
+      },
+      "chosen_window": 7
+    },
+    {
+      "utc": "2026-10-14T00:00:00+00:00",
+      "record": [
+        61327.0,
+        154.68,
+        317.19,
+        37.036349,
+        37.0,
+        -122.54,
+        -10.41
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.000521108246958362,
+        "max_ut1_distance_to_quantum_us": 0.011833421353912854
+      },
+      "chosen_window": 7
+    },
+    {
+      "utc": "2026-10-15T00:00:00+00:00",
+      "record": [
+        61328.0,
+        152.98,
+        316.55,
+        37.03698,
+        37.0,
+        -122.37,
+        -10.41
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004870842818772479,
+        "max_ut1_distance_to_quantum_us": 0.19070402856868895
+      },
+      "chosen_window": 7
+    },
+    {
+      "utc": "2026-10-16T00:00:00+00:00",
+      "record": [
+        61329.0,
+        151.53,
+        315.96,
+        37.037491,
+        37.0,
+        -121.86,
+        -10.31
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003923762702127049,
+        "max_ut1_distance_to_quantum_us": 0.008933582762438164
+      },
+      "chosen_window": 9
+    },
+    {
+      "utc": "2026-10-17T00:00:00+00:00",
+      "record": [
+        61330.0,
+        150.08,
+        315.57,
+        37.038031,
+        37.0,
+        -121.23,
+        -10.26
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 8.95901462984993e-05,
+        "max_ut1_distance_to_quantum_us": 0.05711139294817258
+      },
+      "chosen_window": 9
+    },
+    {
+      "utc": "2026-10-18T00:00:00+00:00",
+      "record": [
+        61331.0,
+        148.59,
+        315.14,
+        37.038675,
+        37.0,
+        -120.7,
+        -10.31
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004947684291112372,
+        "max_ut1_distance_to_quantum_us": 0.1950990835553057
+      },
+      "chosen_window": 9
+    },
+    {
+      "utc": "2026-10-19T00:00:00+00:00",
+      "record": [
+        61332.0,
+        147.19,
+        314.44,
+        37.039466,
+        37.0,
+        -120.4,
+        -10.35
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003527448726429482,
+        "max_ut1_distance_to_quantum_us": 0.02119305975156749
+      },
+      "chosen_window": 9
+    },
+    {
+      "utc": "2026-10-20T00:00:00+00:00",
+      "record": [
+        61333.0,
+        145.75,
+        313.78,
+        37.040437,
+        37.0,
+        -120.3,
+        -10.29
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002061258536376339,
+        "max_ut1_distance_to_quantum_us": 0.18453501837711883
+      },
+      "chosen_window": 11
+    },
+    {
+      "utc": "2026-10-21T00:00:00+00:00",
+      "record": [
+        61334.0,
+        144.51,
+        313.13,
+        37.041646,
+        37.0,
+        -120.36,
+        -10.13
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002533121587503776,
+        "max_ut1_distance_to_quantum_us": 0.2951131818917929
+      },
+      "chosen_window": 11
+    },
+    {
+      "utc": "2026-10-22T00:00:00+00:00",
+      "record": [
+        61335.0,
+        143.55,
+        312.77,
+        37.043094,
+        37.0,
+        -120.56,
+        -9.99
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002724573790765039,
+        "max_ut1_distance_to_quantum_us": 0.03431891570926382
+      },
+      "chosen_window": 12
+    },
+    {
+      "utc": "2026-10-23T00:00:00+00:00",
+      "record": [
+        61336.0,
+        142.82,
+        312.65,
+        37.044721,
+        37.0,
+        -120.8,
+        -9.91
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00017157345740437076,
+        "max_ut1_distance_to_quantum_us": 0.1583562152518425
+      },
+      "chosen_window": 11
+    },
+    {
+      "utc": "2026-10-24T00:00:00+00:00",
+      "record": [
+        61337.0,
+        142.22,
+        312.7,
+        37.046425,
+        37.0,
+        -120.92,
+        -9.85
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00022985601887561127,
+        "max_ut1_distance_to_quantum_us": 0.22685339473582644
+      },
+      "chosen_window": 12
+    },
+    {
+      "utc": "2026-10-25T00:00:00+00:00",
+      "record": [
+        61338.0,
+        141.48,
+        313.07,
+        37.04809,
+        37.0,
+        -120.88,
+        -9.75
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00024872592975470247,
+        "max_ut1_distance_to_quantum_us": 0.14337472009628982
+      },
+      "chosen_window": 12
+    },
+    {
+      "utc": "2026-10-26T00:00:00+00:00",
+      "record": [
+        61339.0,
+        140.6,
+        313.46,
+        37.04966,
+        37.0,
+        -120.76,
+        -9.65
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0005266271703421887,
+        "max_ut1_distance_to_quantum_us": 0.044569439694441826
+      },
+      "chosen_window": 13
+    },
+    {
+      "utc": "2026-10-27T00:00:00+00:00",
+      "record": [
+        61340.0,
+        139.73,
+        313.64,
+        37.051012,
+        37.0,
+        -120.63,
+        -9.64
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00030703509090241634,
+        "max_ut1_distance_to_quantum_us": 0.21966432939279912
+      },
+      "chosen_window": 14
+    },
+    {
+      "utc": "2026-10-28T00:00:00+00:00",
+      "record": [
+        61341.0,
+        138.65,
+        313.55,
+        37.052074,
+        37.0,
+        -120.48,
+        -9.69
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0008188575341870496,
+        "max_ut1_distance_to_quantum_us": 0.2630710369544431
+      },
+      "chosen_window": 14
+    },
+    {
+      "utc": "2026-10-29T00:00:00+00:00",
+      "record": [
+        61342.0,
+        137.23,
+        313.3,
+        37.052867,
+        37.0,
+        -120.29,
+        -9.69
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0005123938926916142,
+        "max_ut1_distance_to_quantum_us": 0.07665011025892454
+      },
+      "chosen_window": 15
+    },
+    {
+      "utc": "2026-10-30T00:00:00+00:00",
+      "record": [
+        61343.0,
+        135.8,
+        313.05,
+        37.053506,
+        37.0,
+        -120.08,
+        -9.59
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0005728903783705118,
+        "max_ut1_distance_to_quantum_us": 0.2097238223086606
+      },
+      "chosen_window": 15
+    },
+    {
+      "utc": "2026-10-31T00:00:00+00:00",
+      "record": [
+        61344.0,
+        134.28,
+        313.02,
+        37.054174,
+        37.0,
+        -119.9,
+        -9.49
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0005693212737297855,
+        "max_ut1_distance_to_quantum_us": 0.17694784304467248
+      },
+      "chosen_window": 15
+    },
+    {
+      "utc": "2026-11-01T00:00:00+00:00",
+      "record": [
+        61345.0,
+        132.44,
+        313.05,
+        37.054971,
+        37.0,
+        -119.72,
+        -9.48
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00046568757562703844,
+        "max_ut1_distance_to_quantum_us": 0.09130992140171657
+      },
+      "chosen_window": 16
+    },
+    {
+      "utc": "2026-11-02T00:00:00+00:00",
+      "record": [
+        61346.0,
+        130.68,
+        312.79,
+        37.05594,
+        37.0,
+        -119.52,
+        -9.54
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0007820010590847275,
+        "max_ut1_distance_to_quantum_us": 0.2344893701433648
+      },
+      "chosen_window": 17
+    },
+    {
+      "utc": "2026-11-03T00:00:00+00:00",
+      "record": [
+        61347.0,
+        129.43,
+        312.73,
+        37.057088,
+        37.0,
+        -119.29,
+        -9.58
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004860462499745387,
+        "max_ut1_distance_to_quantum_us": 0.16444830208683925
+      },
+      "chosen_window": 17
+    },
+    {
+      "utc": "2026-11-04T00:00:00+00:00",
+      "record": [
+        61348.0,
+        128.38,
+        313.16,
+        37.058408,
+        37.0,
+        -119.04,
+        -9.52
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003095252051630304,
+        "max_ut1_distance_to_quantum_us": 0.1672981397859985
+      },
+      "chosen_window": 18
+    },
+    {
+      "utc": "2026-11-05T00:00:00+00:00",
+      "record": [
+        61349.0,
+        127.32,
+        313.68,
+        37.05982,
+        37.0,
+        -118.87,
+        -9.35
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003143898773294941,
+        "max_ut1_distance_to_quantum_us": 0.03372959156422439
+      },
+      "chosen_window": 18
+    },
+    {
+      "utc": "2026-11-06T00:00:00+00:00",
+      "record": [
+        61350.0,
+        126.1,
+        314.39,
+        37.061217,
+        37.0,
+        -118.84,
+        -9.12
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00048648746841963356,
+        "max_ut1_distance_to_quantum_us": 0.28139470487076323
+      },
+      "chosen_window": 18
+    },
+    {
+      "utc": "2026-11-07T00:00:00+00:00",
+      "record": [
+        61351.0,
+        124.58,
+        315.09,
+        37.062472,
+        37.0,
+        -118.9,
+        -8.9
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00031954824240735375,
+        "max_ut1_distance_to_quantum_us": 0.32234885338766617
+      },
+      "chosen_window": 20
+    },
+    {
+      "utc": "2026-11-08T00:00:00+00:00",
+      "record": [
+        61352.0,
+        122.94,
+        315.71,
+        37.06356,
+        37.0,
+        -118.98,
+        -8.82
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004135768136772101,
+        "max_ut1_distance_to_quantum_us": 0.056830060657375725
+      },
+      "chosen_window": 19
+    },
+    {
+      "utc": "2026-11-09T00:00:00+00:00",
+      "record": [
+        61353.0,
+        121.45,
+        316.18,
+        37.064542,
+        37.0,
+        -119.01,
+        -8.96
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0005789596787450131,
+        "max_ut1_distance_to_quantum_us": 0.05953739901087829
+      },
+      "chosen_window": 20
+    },
+    {
+      "utc": "2026-11-10T00:00:00+00:00",
+      "record": [
+        61354.0,
+        120.38,
+        316.73,
+        37.065472,
+        37.0,
+        -119.04,
+        -9.24
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00035625791988453943,
+        "max_ut1_distance_to_quantum_us": 0.2622258250539744
+      },
+      "chosen_window": 20
+    },
+    {
+      "utc": "2026-11-11T00:00:00+00:00",
+      "record": [
+        61355.0,
+        119.51,
+        317.45,
+        37.066324,
+        37.0,
+        -119.05,
+        -9.49
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.000970445006376057,
+        "max_ut1_distance_to_quantum_us": 0.07710454497100727
+      },
+      "chosen_window": 21
+    },
+    {
+      "utc": "2026-11-12T00:00:00+00:00",
+      "record": [
+        61356.0,
+        118.51,
+        318.29,
+        37.067124,
+        37.0,
+        -118.91,
+        -9.55
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003848471579779896,
+        "max_ut1_distance_to_quantum_us": 0.04696234157108847
+      },
+      "chosen_window": 22
+    },
+    {
+      "utc": "2026-11-13T00:00:00+00:00",
+      "record": [
+        61357.0,
+        117.5,
+        319.24,
+        37.067949,
+        37.0,
+        -118.54,
+        -9.43
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0005375998735718305,
+        "max_ut1_distance_to_quantum_us": 0.27146868575300687
+      },
+      "chosen_window": 22
+    },
+    {
+      "utc": "2026-11-14T00:00:00+00:00",
+      "record": [
+        61358.0,
+        116.34,
+        320.24,
+        37.068815,
+        37.0,
+        -118.04,
+        -9.3
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004277751470165168,
+        "max_ut1_distance_to_quantum_us": 0.10014621665277446
+      },
+      "chosen_window": 23
+    },
+    {
+      "utc": "2026-11-15T00:00:00+00:00",
+      "record": [
+        61359.0,
+        115.17,
+        321.22,
+        37.069792,
+        37.0,
+        -117.61,
+        -9.23
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0008318054640729862,
+        "max_ut1_distance_to_quantum_us": 0.07410732649759666
+      },
+      "chosen_window": 23
+    },
+    {
+      "utc": "2026-11-16T00:00:00+00:00",
+      "record": [
+        61360.0,
+        113.98,
+        322.15,
+        37.070877,
+        37.0,
+        -117.36,
+        -9.16
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0008673797770236423,
+        "max_ut1_distance_to_quantum_us": 0.37070440583875097
+      },
+      "chosen_window": 23
+    },
+    {
+      "utc": "2026-11-17T00:00:00+00:00",
+      "record": [
+        61361.0,
+        112.59,
+        323.01,
+        37.072089,
+        37.0,
+        -117.26,
+        -8.97
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0005201837727308644,
+        "max_ut1_distance_to_quantum_us": 0.10341519640633123
+      },
+      "chosen_window": 25
+    },
+    {
+      "utc": "2026-11-18T00:00:00+00:00",
+      "record": [
+        61362.0,
+        111.26,
+        324.03,
+        37.073491,
+        37.0,
+        -117.27,
+        -8.74
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0006034923710603396,
+        "max_ut1_distance_to_quantum_us": 0.040404572132501926
+      },
+      "chosen_window": 24
+    },
+    {
+      "utc": "2026-11-19T00:00:00+00:00",
+      "record": [
+        61363.0,
+        110.23,
+        325.14,
+        37.075092,
+        37.0,
+        -117.45,
+        -8.62
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0016488256353441512,
+        "max_ut1_distance_to_quantum_us": 0.2467863566835149
+      },
+      "chosen_window": 25
+    },
+    {
+      "utc": "2026-11-20T00:00:00+00:00",
+      "record": [
+        61364.0,
+        109.63,
+        326.07,
+        37.076826,
+        37.0,
+        -117.76,
+        -8.7
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0013442317374450555,
+        "max_ut1_distance_to_quantum_us": 0.028931445683610946
+      },
+      "chosen_window": 25
+    },
+    {
+      "utc": "2026-11-21T00:00:00+00:00",
+      "record": [
+        61365.0,
+        108.58,
+        326.99,
+        37.078617,
+        37.0,
+        -118.02,
+        -8.82
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0021075870552052837,
+        "max_ut1_distance_to_quantum_us": 0.1258397901438002
+      },
+      "chosen_window": 26
+    },
+    {
+      "utc": "2026-11-22T00:00:00+00:00",
+      "record": [
+        61366.0,
+        107.79,
+        327.45,
+        37.08035,
+        37.0,
+        -118.08,
+        -8.81
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0020182625076889107,
+        "max_ut1_distance_to_quantum_us": 0.22080236306010192
+      },
+      "chosen_window": 26
+    },
+    {
+      "utc": "2026-11-23T00:00:00+00:00",
+      "record": [
+        61367.0,
+        106.57,
+        328.11,
+        37.081906,
+        37.0,
+        -117.96,
+        -8.7
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0024975970498024025,
+        "max_ut1_distance_to_quantum_us": 0.2160241550086539
+      },
+      "chosen_window": 27
+    },
+    {
+      "utc": "2026-11-24T00:00:00+00:00",
+      "record": [
+        61368.0,
+        105.58,
+        328.29,
+        37.083217,
+        37.0,
+        -117.68,
+        -8.68
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.002203170219738841,
+        "max_ut1_distance_to_quantum_us": 0.1354993628410739
+      },
+      "chosen_window": 28
+    },
+    {
+      "utc": "2026-11-25T00:00:00+00:00",
+      "record": [
+        61369.0,
+        103.95,
+        328.76,
+        37.084288,
+        37.0,
+        -117.26,
+        -8.74
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.002043710041893341,
+        "max_ut1_distance_to_quantum_us": 0.15046390444695135
+      },
+      "chosen_window": 28
+    },
+    {
+      "utc": "2026-11-26T00:00:00+00:00",
+      "record": [
+        61370.0,
+        102.74,
+        328.96,
+        37.085187,
+        37.0,
+        -116.83,
+        -8.69
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0021929645560042274,
+        "max_ut1_distance_to_quantum_us": 0.06525356610609379
+      },
+      "chosen_window": 28
+    },
+    {
+      "utc": "2026-11-27T00:00:00+00:00",
+      "record": [
+        61371.0,
+        101.87,
+        329.91,
+        37.08604,
+        37.0,
+        -116.69,
+        -8.47
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0015980037769898327,
+        "max_ut1_distance_to_quantum_us": 0.10797172222964946
+      },
+      "chosen_window": 29
+    },
+    {
+      "utc": "2026-11-28T00:00:00+00:00",
+      "record": [
+        61372.0,
+        101.25,
+        330.84,
+        37.086987,
+        37.0,
+        -116.89,
+        -8.29
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0012905196090732098,
+        "max_ut1_distance_to_quantum_us": 0.051824507352193905
+      },
+      "chosen_window": 29
+    },
+    {
+      "utc": "2026-11-29T00:00:00+00:00",
+      "record": [
+        61373.0,
+        100.97,
+        331.82,
+        37.088134,
+        37.0,
+        -117.16,
+        -8.34
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0012066442765159898,
+        "max_ut1_distance_to_quantum_us": 0.15954233845150156
+      },
+      "chosen_window": 31
+    },
+    {
+      "utc": "2026-11-30T00:00:00+00:00",
+      "record": [
+        61374.0,
+        100.7,
+        332.79,
+        37.089513,
+        37.0,
+        -117.22,
+        -8.54
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003444736300746066,
+        "max_ut1_distance_to_quantum_us": 0.34859521491625856
+      },
+      "chosen_window": 31
+    },
+    {
+      "utc": "2026-12-01T00:00:00+00:00",
+      "record": [
+        61375.0,
+        100.45,
+        333.78,
+        37.091076,
+        37.0,
+        -117.07,
+        -8.61
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00023954435852953588,
+        "max_ut1_distance_to_quantum_us": 0.0413134557675221
+      },
+      "chosen_window": 31
+    },
+    {
+      "utc": "2026-12-02T00:00:00+00:00",
+      "record": [
+        61376.0,
+        100.21,
+        334.77,
+        37.092731,
+        37.0,
+        -116.91,
+        -8.48
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0001292417484945845,
+        "max_ut1_distance_to_quantum_us": 0.21924567761288927
+      },
+      "chosen_window": 32
+    },
+    {
+      "utc": "2026-12-03T00:00:00+00:00",
+      "record": [
+        61377.0,
+        99.98,
+        335.76,
+        37.09437,
+        37.0,
+        -116.84,
+        -8.28
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 7.535128918613481e-05,
+        "max_ut1_distance_to_quantum_us": 0.31359927277208044
+      },
+      "chosen_window": 32
+    },
+    {
+      "utc": "2026-12-04T00:00:00+00:00",
+      "record": [
+        61378.0,
+        99.77,
+        336.75,
+        37.095901,
+        37.0,
+        -116.86,
+        -8.12
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 9.340635263985759e-05,
+        "max_ut1_distance_to_quantum_us": 0.05743250852674464
+      },
+      "chosen_window": 32
+    },
+    {
+      "utc": "2026-12-05T00:00:00+00:00",
+      "record": [
+        61379.0,
+        99.58,
+        337.75,
+        37.097259,
+        37.0,
+        -116.91,
+        -8.03
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00012127939841911618,
+        "max_ut1_distance_to_quantum_us": 0.11886464079680081
+      },
+      "chosen_window": 33
+    },
+    {
+      "utc": "2026-12-06T00:00:00+00:00",
+      "record": [
+        61380.0,
+        99.4,
+        338.75,
+        37.098408,
+        37.0,
+        -116.92,
+        -8.0
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00010599176141568023,
+        "max_ut1_distance_to_quantum_us": 0.30449402999011
+      },
+      "chosen_window": 34
+    },
+    {
+      "utc": "2026-12-07T00:00:00+00:00",
+      "record": [
+        61381.0,
+        99.24,
+        339.75,
+        37.099345,
+        37.0,
+        -116.87,
+        -8.09
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00013072054311594948,
+        "max_ut1_distance_to_quantum_us": 0.12820547823366724
+      },
+      "chosen_window": 34
+    },
+    {
+      "utc": "2026-12-08T00:00:00+00:00",
+      "record": [
+        61382.0,
+        99.09,
+        340.76,
+        37.100096,
+        37.0,
+        -116.8,
+        -8.31
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 9.48792188277643e-05,
+        "max_ut1_distance_to_quantum_us": 0.20682282553252662
+      },
+      "chosen_window": 35
+    },
+    {
+      "utc": "2026-12-09T00:00:00+00:00",
+      "record": [
+        61383.0,
+        98.95,
+        341.76,
+        37.100707,
+        37.0,
+        -116.73,
+        -8.54
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00013201965032294538,
+        "max_ut1_distance_to_quantum_us": 0.23701240081663855
+      },
+      "chosen_window": 36
+    },
+    {
+      "utc": "2026-12-10T00:00:00+00:00",
+      "record": [
+        61384.0,
+        98.83,
+        342.77,
+        37.101247,
+        37.0,
+        -116.61,
+        -8.61
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00027554681377296356,
+        "max_ut1_distance_to_quantum_us": 0.0220393445715672
+      },
+      "chosen_window": 35
+    },
+    {
+      "utc": "2026-12-11T00:00:00+00:00",
+      "record": [
+        61385.0,
+        98.73,
+        343.78,
+        37.101786,
+        37.0,
+        -116.37,
+        -8.44
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00019568386497154444,
+        "max_ut1_distance_to_quantum_us": 0.08921517036242221
+      },
+      "chosen_window": 36
+    },
+    {
+      "utc": "2026-12-12T00:00:00+00:00",
+      "record": [
+        61386.0,
+        98.64,
+        344.79,
+        37.102397,
+        37.0,
+        -116.01,
+        -8.19
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0001462846075236789,
+        "max_ut1_distance_to_quantum_us": 0.18536139378966254
+      },
+      "chosen_window": 37
+    },
+    {
+      "utc": "2026-12-13T00:00:00+00:00",
+      "record": [
+        61387.0,
+        98.57,
+        345.8,
+        37.103136,
+        37.0,
+        -115.69,
+        -8.0
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.000275302037455159,
+        "max_ut1_distance_to_quantum_us": 0.06377553063430241
+      },
+      "chosen_window": 37
+    },
+    {
+      "utc": "2026-12-14T00:00:00+00:00",
+      "record": [
+        61388.0,
+        98.51,
+        346.82,
+        37.104041,
+        37.0,
+        -115.52,
+        -7.88
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.000119110547643686,
+        "max_ut1_distance_to_quantum_us": 0.060894940645539464
+      },
+      "chosen_window": 38
+    },
+    {
+      "utc": "2026-12-15T00:00:00+00:00",
+      "record": [
+        61389.0,
+        98.47,
+        347.83,
+        37.105129,
+        37.0,
+        -115.48,
+        -7.74
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002402977655602918,
+        "max_ut1_distance_to_quantum_us": 0.16369822475326146
+      },
+      "chosen_window": 38
+    },
+    {
+      "utc": "2026-12-16T00:00:00+00:00",
+      "record": [
+        61390.0,
+        98.44,
+        348.84,
+        37.10639,
+        37.0,
+        -115.5,
+        -7.6
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002455765584777139,
+        "max_ut1_distance_to_quantum_us": 0.07554099568096717
+      },
+      "chosen_window": 39
+    },
+    {
+      "utc": "2026-12-17T00:00:00+00:00",
+      "record": [
+        61391.0,
+        98.43,
+        349.86,
+        37.107789,
+        37.0,
+        -115.62,
+        -7.59
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00015521136491033157,
+        "max_ut1_distance_to_quantum_us": 0.04187147339962394
+      },
+      "chosen_window": 40
+    },
+    {
+      "utc": "2026-12-18T00:00:00+00:00",
+      "record": [
+        61392.0,
+        98.44,
+        350.87,
+        37.109265,
+        37.0,
+        -115.86,
+        -7.79
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004233584084481002,
+        "max_ut1_distance_to_quantum_us": 0.19344306423363378
+      },
+      "chosen_window": 39
+    },
+    {
+      "utc": "2026-12-19T00:00:00+00:00",
+      "record": [
+        61393.0,
+        98.46,
+        351.89,
+        37.110731,
+        37.0,
+        -116.12,
+        -8.05
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0005020793850213082,
+        "max_ut1_distance_to_quantum_us": 0.14353544486311876
+      },
+      "chosen_window": 41
+    },
+    {
+      "utc": "2026-12-20T00:00:00+00:00",
+      "record": [
+        61394.0,
+        98.49,
+        352.9,
+        37.112088,
+        37.0,
+        -116.32,
+        -8.09
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00032731848381444245,
+        "max_ut1_distance_to_quantum_us": 0.0019701076325873146
+      },
+      "chosen_window": 40
+    },
+    {
+      "utc": "2026-12-21T00:00:00+00:00",
+      "record": [
+        61395.0,
+        98.55,
+        353.91,
+        37.11325,
+        37.0,
+        -116.47,
+        -7.94
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0006009743399884814,
+        "max_ut1_distance_to_quantum_us": 0.1261964754917244
+      },
+      "chosen_window": 42
+    },
+    {
+      "utc": "2026-12-22T00:00:00+00:00",
+      "record": [
+        61396.0,
+        98.61,
+        354.93,
+        37.114182,
+        37.0,
+        -116.53,
+        -7.87
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004555927372307618,
+        "max_ut1_distance_to_quantum_us": 0.05486575815893957
+      },
+      "chosen_window": 41
+    },
+    {
+      "utc": "2026-12-23T00:00:00+00:00",
+      "record": [
+        61397.0,
+        98.7,
+        355.94,
+        37.114919,
+        37.0,
+        -116.29,
+        -7.98
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0009701099991172551,
+        "max_ut1_distance_to_quantum_us": 0.14132560721691334
+      },
+      "chosen_window": 43
+    },
+    {
+      "utc": "2026-12-24T00:00:00+00:00",
+      "record": [
+        61398.0,
+        98.8,
+        356.94,
+        37.115571,
+        37.0,
+        -115.74,
+        -8.03
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00045289519171696536,
+        "max_ut1_distance_to_quantum_us": 0.22508404384780079
+      },
+      "chosen_window": 43
+    },
+    {
+      "utc": "2026-12-25T00:00:00+00:00",
+      "record": [
+        61399.0,
+        98.91,
+        357.95,
+        37.116287,
+        37.0,
+        -115.3,
+        -7.84
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0007303616614993467,
+        "max_ut1_distance_to_quantum_us": 0.2108359637986723
+      },
+      "chosen_window": 44
+    },
+    {
+      "utc": "2026-12-26T00:00:00+00:00",
+      "record": [
+        61400.0,
+        99.04,
+        358.96,
+        37.117197,
+        37.0,
+        -115.3,
+        -7.64
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003825682444484887,
+        "max_ut1_distance_to_quantum_us": 0.00978399583573264
+      },
+      "chosen_window": 43
+    },
+    {
+      "utc": "2026-12-27T00:00:00+00:00",
+      "record": [
+        61401.0,
+        99.19,
+        359.96,
+        37.118364,
+        37.0,
+        -115.55,
+        -7.71
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00040514336624430144,
+        "max_ut1_distance_to_quantum_us": 0.18370852217231004
+      },
+      "chosen_window": 45
+    },
+    {
+      "utc": "2026-12-28T00:00:00+00:00",
+      "record": [
+        61402.0,
+        99.35,
+        360.96,
+        37.119762,
+        37.0,
+        -115.67,
+        -8.0
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00038133829748754187,
+        "max_ut1_distance_to_quantum_us": 0.276582376557144
+      },
+      "chosen_window": 44
+    },
+    {
+      "utc": "2026-12-29T00:00:00+00:00",
+      "record": [
+        61403.0,
+        99.53,
+        361.96,
+        37.121295,
+        37.0,
+        -115.62,
+        -8.15
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002841718210653399,
+        "max_ut1_distance_to_quantum_us": 0.22802821320055955
+      },
+      "chosen_window": 45
+    },
+    {
+      "utc": "2026-12-30T00:00:00+00:00",
+      "record": [
+        61404.0,
+        99.72,
+        362.96,
+        37.122836,
+        37.0,
+        -115.67,
+        -8.02
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00012579484337038593,
+        "max_ut1_distance_to_quantum_us": 0.04725498570223863
+      },
+      "chosen_window": 45
+    },
+    {
+      "utc": "2026-12-31T00:00:00+00:00",
+      "record": [
+        61405.0,
+        99.93,
+        363.95,
+        37.12427,
+        37.0,
+        -115.85,
+        -7.8
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00031562358138051796,
+        "max_ut1_distance_to_quantum_us": 0.0029344420227062074
+      },
+      "chosen_window": 46
+    },
+    {
+      "utc": "2027-01-01T00:00:00+00:00",
+      "record": [
+        61406.0,
+        100.16,
+        364.94,
+        37.125521,
+        37.0,
+        -116.0,
+        -7.73
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00021775467454946464,
+        "max_ut1_distance_to_quantum_us": 0.15161886324221996
+      },
+      "chosen_window": 47
+    },
+    {
+      "utc": "2027-01-02T00:00:00+00:00",
+      "record": [
+        61407.0,
+        100.4,
+        365.93,
+        37.126552,
+        37.0,
+        -116.04,
+        -7.79
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00013559572289523203,
+        "max_ut1_distance_to_quantum_us": 0.01615077138694687
+      },
+      "chosen_window": 47
+    },
+    {
+      "utc": "2027-01-03T00:00:00+00:00",
+      "record": [
+        61408.0,
+        100.65,
+        366.92,
+        37.127365,
+        37.0,
+        -116.02,
+        -7.86
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00011262618204455066,
+        "max_ut1_distance_to_quantum_us": 0.1140626011419954
+      },
+      "chosen_window": 47
+    },
+    {
+      "utc": "2027-01-04T00:00:00+00:00",
+      "record": [
+        61409.0,
+        100.93,
+        367.9,
+        37.127987,
+        37.0,
+        -116.0,
+        -7.93
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00015087519295775564,
+        "max_ut1_distance_to_quantum_us": 0.19972525677758313
+      },
+      "chosen_window": 48
+    },
+    {
+      "utc": "2027-01-05T00:00:00+00:00",
+      "record": [
+        61410.0,
+        101.21,
+        368.87,
+        37.128463,
+        37.0,
+        -115.97,
+        -8.05
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00023879877289800788,
+        "max_ut1_distance_to_quantum_us": 0.018843252291844692
+      },
+      "chosen_window": 49
+    },
+    {
+      "utc": "2027-01-06T00:00:00+00:00",
+      "record": [
+        61411.0,
+        101.52,
+        369.84,
+        37.128857,
+        37.0,
+        -115.92,
+        -8.21
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00026171082980051016,
+        "max_ut1_distance_to_quantum_us": 0.09825077995628817
+      },
+      "chosen_window": 50
+    },
+    {
+      "utc": "2027-01-07T00:00:00+00:00",
+      "record": [
+        61412.0,
+        101.84,
+        370.81,
+        37.129239,
+        37.0,
+        -115.82,
+        -8.26
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00019022153446712764,
+        "max_ut1_distance_to_quantum_us": 0.23911027824397024
+      },
+      "chosen_window": 49
+    },
+    {
+      "utc": "2027-01-08T00:00:00+00:00",
+      "record": [
+        61413.0,
+        102.17,
+        371.77,
+        37.129683,
+        37.0,
+        -115.65,
+        -8.09
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0001502234404142655,
+        "max_ut1_distance_to_quantum_us": 0.10450996512645361
+      },
+      "chosen_window": 50
+    },
+    {
+      "utc": "2027-01-09T00:00:00+00:00",
+      "record": [
+        61414.0,
+        102.52,
+        372.73,
+        37.130249,
+        37.0,
+        -115.4,
+        -7.78
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00023172164992502076,
+        "max_ut1_distance_to_quantum_us": 0.19701791842408056
+      },
+      "chosen_window": 51
+    },
+    {
+      "utc": "2027-01-10T00:00:00+00:00",
+      "record": [
+        61415.0,
+        102.89,
+        373.68,
+        37.130981,
+        37.0,
+        -115.15,
+        -7.54
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00023612185714227962,
+        "max_ut1_distance_to_quantum_us": 0.2489935155836065
+      },
+      "chosen_window": 52
+    },
+    {
+      "utc": "2027-01-11T00:00:00+00:00",
+      "record": [
+        61416.0,
+        103.27,
+        374.62,
+        37.131897,
+        37.0,
+        -115.01,
+        -7.47
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00018957799966301536,
+        "max_ut1_distance_to_quantum_us": 0.05336547559409155
+      },
+      "chosen_window": 51
+    },
+    {
+      "utc": "2027-01-12T00:00:00+00:00",
+      "record": [
+        61417.0,
+        103.66,
+        375.56,
+        37.132987,
+        37.0,
+        -115.02,
+        -7.5
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00016217410393437603,
+        "max_ut1_distance_to_quantum_us": 0.0668849509111169
+      },
+      "chosen_window": 52
+    },
+    {
+      "utc": "2027-01-13T00:00:00+00:00",
+      "record": [
+        61418.0,
+        104.07,
+        376.5,
+        37.134218,
+        37.0,
+        -115.1,
+        -7.55
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00016898890021366242,
+        "max_ut1_distance_to_quantum_us": 0.16545075709473167
+      },
+      "chosen_window": 53
+    },
+    {
+      "utc": "2027-01-14T00:00:00+00:00",
+      "record": [
+        61419.0,
+        104.5,
+        377.43,
+        37.135531,
+        37.0,
+        -115.19,
+        -7.64
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00021409103692349163,
+        "max_ut1_distance_to_quantum_us": 0.2550406463797117
+      },
+      "chosen_window": 54
+    },
+    {
+      "utc": "2027-01-15T00:00:00+00:00",
+      "record": [
+        61420.0,
+        104.94,
+        378.35,
+        37.136851,
+        37.0,
+        -115.28,
+        -7.81
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00027276922332930553,
+        "max_ut1_distance_to_quantum_us": 0.15568110001140667
+      },
+      "chosen_window": 54
+    },
+    {
+      "utc": "2027-01-16T00:00:00+00:00",
+      "record": [
+        61421.0,
+        105.4,
+        379.26,
+        37.138094,
+        37.0,
+        -115.41,
+        -7.99
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.000285143092241924,
+        "max_ut1_distance_to_quantum_us": 0.14592854569173141
+      },
+      "chosen_window": 55
+    },
+    {
+      "utc": "2027-01-17T00:00:00+00:00",
+      "record": [
+        61422.0,
+        105.87,
+        380.17,
+        37.139182,
+        37.0,
+        -115.64,
+        -7.98
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0002593606768641621,
+        "max_ut1_distance_to_quantum_us": 0.21661148252860585
+      },
+      "chosen_window": 54
+    },
+    {
+      "utc": "2027-01-18T00:00:00+00:00",
+      "record": [
+        61423.0,
+        106.35,
+        381.07,
+        37.140068,
+        37.0,
+        -116.04,
+        -7.81
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00040468255794108197,
+        "max_ut1_distance_to_quantum_us": 0.12480810340775861
+      },
+      "chosen_window": 56
+    },
+    {
+      "utc": "2027-01-19T00:00:00+00:00",
+      "record": [
+        61424.0,
+        106.85,
+        381.97,
+        37.140763,
+        37.0,
+        -116.53,
+        -7.75
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00036068272197553597,
+        "max_ut1_distance_to_quantum_us": 0.11584486259152982
+      },
+      "chosen_window": 56
+    },
+    {
+      "utc": "2027-01-20T00:00:00+00:00",
+      "record": [
+        61425.0,
+        107.37,
+        382.86,
+        37.141345,
+        37.0,
+        -116.74,
+        -7.94
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00039810597350593016,
+        "max_ut1_distance_to_quantum_us": 0.18403226675900441
+      },
+      "chosen_window": 57
+    },
+    {
+      "utc": "2027-01-21T00:00:00+00:00",
+      "record": [
+        61426.0,
+        107.9,
+        383.74,
+        37.141945,
+        37.0,
+        -116.42,
+        -8.19
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003031287810108339,
+        "max_ut1_distance_to_quantum_us": 0.00816455525409765
+      },
+      "chosen_window": 56
+    },
+    {
+      "utc": "2027-01-22T00:00:00+00:00",
+      "record": [
+        61427.0,
+        108.44,
+        384.61,
+        37.14271,
+        37.0,
+        -115.78,
+        -8.2
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00027761038986644584,
+        "max_ut1_distance_to_quantum_us": 0.07885227404358375
+      },
+      "chosen_window": 58
+    },
+    {
+      "utc": "2027-01-23T00:00:00+00:00",
+      "record": [
+        61428.0,
+        109.0,
+        385.47,
+        37.143742,
+        37.0,
+        -115.26,
+        -8.02
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00041740654592103965,
+        "max_ut1_distance_to_quantum_us": 0.09647703791415552
+      },
+      "chosen_window": 57
+    },
+    {
+      "utc": "2027-01-24T00:00:00+00:00",
+      "record": [
+        61429.0,
+        109.58,
+        386.33,
+        37.14506,
+        37.0,
+        -115.0,
+        -7.96
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00035272182026346854,
+        "max_ut1_distance_to_quantum_us": 0.23076837862845423
+      },
+      "chosen_window": 58
+    },
+    {
+      "utc": "2027-01-25T00:00:00+00:00",
+      "record": [
+        61430.0,
+        110.16,
+        387.17,
+        37.146595,
+        37.0,
+        -114.89,
+        -8.12
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00029434337579914427,
+        "max_ut1_distance_to_quantum_us": 0.1395519291236269
+      },
+      "chosen_window": 59
+    },
+    {
+      "utc": "2027-01-26T00:00:00+00:00",
+      "record": [
+        61431.0,
+        110.76,
+        388.01,
+        37.148214,
+        37.0,
+        -114.9,
+        -8.27
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00025708639873300854,
+        "max_ut1_distance_to_quantum_us": 0.09934327493965611
+      },
+      "chosen_window": 60
+    },
+    {
+      "utc": "2027-01-27T00:00:00+00:00",
+      "record": [
+        61432.0,
+        111.38,
+        388.84,
+        37.149773,
+        37.0,
+        -115.18,
+        -8.24
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00032032601438913844,
+        "max_ut1_distance_to_quantum_us": 0.24708270984774572
+      },
+      "chosen_window": 59
+    },
+    {
+      "utc": "2027-01-28T00:00:00+00:00",
+      "record": [
+        61433.0,
+        112.01,
+        389.66,
+        37.15116,
+        37.0,
+        -115.63,
+        -8.15
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003502822448808729,
+        "max_ut1_distance_to_quantum_us": 0.021608322242627764
+      },
+      "chosen_window": 60
+    },
+    {
+      "utc": "2027-01-29T00:00:00+00:00",
+      "record": [
+        61434.0,
+        112.65,
+        390.47,
+        37.152318,
+        37.0,
+        -115.94,
+        -8.21
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003771945646349195,
+        "max_ut1_distance_to_quantum_us": 0.08425551101254314
+      },
+      "chosen_window": 61
+    },
+    {
+      "utc": "2027-01-30T00:00:00+00:00",
+      "record": [
+        61435.0,
+        113.31,
+        391.27,
+        37.15324,
+        37.0,
+        -115.98,
+        -8.39
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003461867001988139,
+        "max_ut1_distance_to_quantum_us": 0.2884710283979075
+      },
+      "chosen_window": 61
+    },
+    {
+      "utc": "2027-01-31T00:00:00+00:00",
+      "record": [
+        61436.0,
+        113.98,
+        392.07,
+        37.153954,
+        37.0,
+        -115.92,
+        -8.54
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.000324987614476413,
+        "max_ut1_distance_to_quantum_us": 0.06552893694333761
+      },
+      "chosen_window": 61
+    },
+    {
+      "utc": "2027-02-01T00:00:00+00:00",
+      "record": [
+        61437.0,
+        114.66,
+        392.85,
+        37.15451,
+        37.0,
+        -115.9,
+        -8.61
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.000385531472375078,
+        "max_ut1_distance_to_quantum_us": 0.0575492720145121
+      },
+      "chosen_window": 63
+    },
+    {
+      "utc": "2027-02-02T00:00:00+00:00",
+      "record": [
+        61438.0,
+        115.36,
+        393.62,
+        37.154972,
+        37.0,
+        -115.9,
+        -8.69
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00041678696197777754,
+        "max_ut1_distance_to_quantum_us": 0.2364113811381685
+      },
+      "chosen_window": 63
+    },
+    {
+      "utc": "2027-02-03T00:00:00+00:00",
+      "record": [
+        61439.0,
+        116.07,
+        394.38,
+        37.15541,
+        37.0,
+        -115.81,
+        -8.82
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 5,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.000398263327042514,
+        "max_ut1_distance_to_quantum_us": 0.027110516498396464
+      },
+      "chosen_window": 63
+    },
+    {
+      "utc": "2027-02-04T00:00:00+00:00",
+      "record": [
+        61440.0,
+        116.79,
+        395.13,
+        37.155899,
+        37.0,
+        -115.67,
+        -8.9
+      ],
+      "windows": 2,
+      "consistent": true,
+      "all_window_count": 5,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0003847416237476864,
+        "max_ut1_distance_to_quantum_us": 0.08447477739537135
+      },
+      "chosen_window": 63
+    },
+    {
+      "utc": "2027-02-05T00:00:00+00:00",
+      "record": [
+        61441.0,
+        117.53,
+        395.87,
+        37.156505,
+        37.0,
+        -115.53,
+        -8.78
+      ],
+      "windows": 3,
+      "consistent": true,
+      "all_window_count": 6,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00040370583087678824,
+        "max_ut1_distance_to_quantum_us": 0.15242139284055156
+      },
+      "chosen_window": 65
+    },
+    {
+      "utc": "2027-02-06T00:00:00+00:00",
+      "record": [
+        61442.0,
+        118.27,
+        396.6,
+        37.157278,
+        37.0,
+        -115.38,
+        -8.51
+      ],
+      "windows": 3,
+      "consistent": true,
+      "all_window_count": 6,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00044595273584491224,
+        "max_ut1_distance_to_quantum_us": 0.25535413783472904
+      },
+      "chosen_window": 69
+    },
+    {
+      "utc": "2027-02-07T00:00:00+00:00",
+      "record": [
+        61443.0,
+        119.03,
+        397.32,
+        37.158246,
+        37.0,
+        -115.22,
+        -8.28
+      ],
+      "windows": 4,
+      "consistent": true,
+      "all_window_count": 6,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004553118287731195,
+        "max_ut1_distance_to_quantum_us": 0.12859850073709822
+      },
+      "chosen_window": 66
+    },
+    {
+      "utc": "2027-02-08T00:00:00+00:00",
+      "record": [
+        61444.0,
+        119.8,
+        398.03,
+        37.159405,
+        37.0,
+        -115.11,
+        -8.24
+      ],
+      "windows": 4,
+      "consistent": true,
+      "all_window_count": 6,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004903038129668857,
+        "max_ut1_distance_to_quantum_us": 0.2483383596540989
+      },
+      "chosen_window": 68
+    },
+    {
+      "utc": "2027-02-09T00:00:00+00:00",
+      "record": [
+        61445.0,
+        120.59,
+        398.73,
+        37.160722,
+        37.0,
+        -115.12,
+        -8.39
+      ],
+      "windows": 4,
+      "consistent": true,
+      "all_window_count": 5,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.00047885158141980355,
+        "max_ut1_distance_to_quantum_us": 0.09602428718835654
+      },
+      "chosen_window": 66
+    },
+    {
+      "utc": "2027-02-10T00:00:00+00:00",
+      "record": [
+        61446.0,
+        121.39,
+        399.41,
+        37.162137,
+        37.0,
+        -115.22,
+        -8.58
+      ],
+      "windows": 4,
+      "consistent": true,
+      "all_window_count": 5,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004929640435875626,
+        "max_ut1_distance_to_quantum_us": 0.1262501712062658
+      },
+      "chosen_window": 67
+    },
+    {
+      "utc": "2027-02-11T00:00:00+00:00",
+      "record": [
+        61447.0,
+        122.2,
+        400.08,
+        37.163572,
+        37.0,
+        -115.31,
+        -8.72
+      ],
+      "windows": 3,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004969221447481686,
+        "max_ut1_distance_to_quantum_us": 0.01796504989215464
+      },
+      "chosen_window": 69
+    },
+    {
+      "utc": "2027-02-12T00:00:00+00:00",
+      "record": [
+        61448.0,
+        123.02,
+        400.74,
+        37.164943,
+        37.0,
+        -115.32,
+        -8.8
+      ],
+      "windows": 3,
+      "consistent": true,
+      "all_window_count": 4,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0005250745657576772,
+        "max_ut1_distance_to_quantum_us": 0.052151683860302
+      },
+      "chosen_window": 67
+    },
+    {
+      "utc": "2027-02-13T00:00:00+00:00",
+      "record": [
+        61449.0,
+        123.85,
+        401.39,
+        37.166175,
+        37.0,
+        -115.35,
+        -8.83
+      ],
+      "windows": 3,
+      "consistent": true,
+      "all_window_count": 3,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0004980281580628798,
+        "max_ut1_distance_to_quantum_us": 0.031975083913948765
+      },
+      "chosen_window": 69
+    },
+    {
+      "utc": "2027-02-14T00:00:00+00:00",
+      "record": [
+        61450.0,
+        124.69,
+        402.03,
+        37.167219,
+        37.0,
+        -115.51,
+        -8.79
+      ],
+      "windows": 3,
+      "consistent": true,
+      "all_window_count": 3,
+      "source": "Nov18PCKderived; nottheoriginalASCIIfile",
+      "uncertainty": {
+        "max_angular_distance_to_quantum": 0.0018202216177911623,
+        "max_ut1_distance_to_quantum_us": 0.03574101725689616
+      },
+      "chosen_window": 67
+    }
+  ],
+  "conflicts": [],
+  "validation": {
+    "heldout": {
+      "count": 544,
+      "fractions": [
+        0.07321,
+        0.38321,
+        0.67321,
+        0.97321
+      ],
+      "training_fractions": [
+        0.025,
+        0.125,
+        0.225,
+        0.325,
+        0.425,
+        0.525,
+        0.625,
+        0.725,
+        0.825,
+        0.925
+      ],
+      "max_axis_mas": [
+        5.19554247477667e-05,
+        3.235856882882126e-05,
+        0.03494543376285166
+      ],
+      "max_norm_mas": 0.03494543377987877,
+      "rms_norm_mas": 0.009749549089639072,
+      "worst": {
+        "utc": "2027-01-22T09:11:49.344000+00:00",
+        "residual_rotation_mas": [
+          -2.8054054940218874e-07,
+          -1.0541994200198003e-06,
+          0.03494543376285166
+        ]
+      }
+    },
+    "controls": [
+      {
+        "center": "2000-01-15",
+        "known_record_count": 8,
+        "known_parameter_count": 40,
+        "rounding_mismatches": [],
+        "inferred_ut1_deviation_us": [
+          -0.005290765159315924,
+          -0.0006715445977079071,
+          -0.009032778081063952,
+          0.0008830660647163313,
+          -0.017443355204704858,
+          -0.00384081388915547,
+          0.004136424536227423,
+          -0.015367351835493537
+        ],
+        "condition_number": 717.2042528021345
+      },
+      {
+        "center": "2016-07-15",
+        "known_record_count": 8,
+        "known_parameter_count": 40,
+        "rounding_mismatches": [
+          {
+            "mjd": 57581.0,
+            "column": 5,
+            "base": -99.88,
+            "derived": -99.86999999999999,
+            "quantum": 0.01
+          }
+        ],
+        "inferred_ut1_deviation_us": [
+          -0.005053685470102209,
+          -0.12028400675490047,
+          -0.06955293230248571,
+          -0.014817572946412838,
+          -0.07194707052349258,
+          -0.018099342469213298,
+          -0.08111031490898313,
+          -0.034091222289589496
+        ],
+        "condition_number": 717.2951006668694
+      },
+      {
+        "center": "2020-06-15",
+        "known_record_count": 8,
+        "known_parameter_count": 40,
+        "rounding_mismatches": [
+          {
+            "mjd": 59012.0,
+            "column": 5,
+            "base": -107.52,
+            "derived": -107.53,
+            "quantum": 0.01
+          }
+        ],
+        "inferred_ut1_deviation_us": [
+          -0.1465219980900656,
+          -0.09291426295021665,
+          0.05101111355543253,
+          -0.08959308672729094,
+          -0.07829838466477668,
+          -0.03256627678638324,
+          -0.11249270670532496,
+          -0.21603094069178042
+        ],
+        "condition_number": 717.2258996195014
+      },
+      {
+        "center": "2024-01-01",
+        "known_record_count": 8,
+        "known_parameter_count": 40,
+        "rounding_mismatches": [],
+        "inferred_ut1_deviation_us": [
+          -0.18642583654582268,
+          -0.19622081737225017,
+          -0.2185842333801702,
+          -0.06870831015248768,
+          0.01839723751118072,
+          -0.24097450790350194,
+          0.010048111676042026,
+          -0.026090020810443093
+        ],
+        "condition_number": 717.1868384177563
+      }
+    ],
+    "overlap_conflicts": 0,
+    "boundary_note": "UTC2027Feb14ET differsfromkernelend by1doubleULP0.119209us; onlythat<1us boundary isclamped toexactPCKend. Notappliedtoothertimes. DerivedUTCanchorUT1 fitdistanceatboundary0.035741us.",
+    "overlapping_historical_controls": [
+      {
+        "center": "2000-01-15",
+        "known_records": 8,
+        "known_parameters": 40,
+        "minimum_independent_windows": 2,
+        "overlap_conflicts": [],
+        "rounding_mismatches": []
+      },
+      {
+        "center": "2016-07-15",
+        "known_records": 8,
+        "known_parameters": 40,
+        "minimum_independent_windows": 2,
+        "overlap_conflicts": [],
+        "rounding_mismatches": []
+      },
+      {
+        "center": "2020-06-15",
+        "known_records": 8,
+        "known_parameters": 40,
+        "minimum_independent_windows": 2,
+        "overlap_conflicts": [],
+        "rounding_mismatches": []
+      },
+      {
+        "center": "2024-01-01",
+        "known_records": 8,
+        "known_parameters": 40,
+        "minimum_independent_windows": 2,
+        "overlap_conflicts": [],
+        "rounding_mismatches": []
+      }
+    ],
+    "single_window_edge_failures_retained": true
+  }
+}

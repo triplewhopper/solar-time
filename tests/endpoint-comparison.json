@@ -1,0 +1,290 @@
+[
+  {
+    "site": "equator",
+    "utc": "2027-02-10T06:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.5979236448183656,
+      "keepSupport": 0.5980400601401925
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "equator",
+    "utc": "2027-02-11T12:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.4210451152175665,
+      "keepSupport": 0.4205649020150304
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "equator",
+    "utc": "2027-02-12T18:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.2975866664201021,
+      "keepSupport": 0.2978486008942127
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "equator",
+    "utc": "2027-02-13T00:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.44990156311541796,
+      "keepSupport": 0.44990156311541796
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "equator",
+    "utc": "2027-02-13T06:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.24022301658988,
+      "keepSupport": 0.24022301658988
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "equator",
+    "utc": "2027-02-13T12:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.22051972337067127,
+      "keepSupport": 0.22051972337067127
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "equator",
+    "utc": "2027-02-13T23:59:59.000Z",
+    "error_us": {
+      "dropLast": 0.2206361386924982,
+      "keepSupport": 0.2206361386924982
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "equator",
+    "utc": "2027-02-14T00:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.444866600446403,
+      "keepSupport": 0.444866600446403
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "south",
+    "utc": "2027-02-10T06:00:00.000Z",
+    "error_us": {
+      "dropLast": 133.590743644163,
+      "keepSupport": 0.6248592399060726
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "south",
+    "utc": "2027-02-11T12:00:00.000Z",
+    "error_us": {
+      "dropLast": -1048.4257800271735,
+      "keepSupport": 0.3472378011792898
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "south",
+    "utc": "2027-02-12T18:00:00.000Z",
+    "error_us": {
+      "dropLast": 3483.076929114759,
+      "keepSupport": 0.5783222150057554
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "south",
+    "utc": "2027-02-13T00:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.20986772142350674,
+      "keepSupport": 0.20986772142350674
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "south",
+    "utc": "2027-02-13T06:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.20499282982200384,
+      "keepSupport": 0.20499282982200384
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "south",
+    "utc": "2027-02-13T12:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.3572640707716346,
+      "keepSupport": 0.3572640707716346
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "south",
+    "utc": "2027-02-13T23:59:59.000Z",
+    "error_us": {
+      "dropLast": 0.23645407054573298,
+      "keepSupport": 0.23645407054573298
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "south",
+    "utc": "2027-02-14T00:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.34234835766255856,
+      "keepSupport": 0.34234835766255856
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "north",
+    "utc": "2027-02-10T06:00:00.000Z",
+    "error_us": {
+      "dropLast": 150.14999371487647,
+      "keepSupport": 0.5884357960894704
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "north",
+    "utc": "2027-02-11T12:00:00.000Z",
+    "error_us": {
+      "dropLast": -1176.3066868297756,
+      "keepSupport": 0.35771518014371395
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "north",
+    "utc": "2027-02-12T18:00:00.000Z",
+    "error_us": {
+      "dropLast": 3897.879854775965,
+      "keepSupport": 0.48906076699495316
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "north",
+    "utc": "2027-02-13T00:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.23606116883456707,
+      "keepSupport": 0.23606116883456707
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "north",
+    "utc": "2027-02-13T06:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.1050939317792654,
+      "keepSupport": 0.1050939317792654
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "north",
+    "utc": "2027-02-13T12:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.2206361386924982,
+      "keepSupport": 0.2206361386924982
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "north",
+    "utc": "2027-02-13T23:59:59.000Z",
+    "error_us": {
+      "dropLast": 0.2407905412837863,
+      "keepSupport": 0.2407905412837863
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "north",
+    "utc": "2027-02-14T00:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.3467139322310686,
+      "keepSupport": 0.3467139322310686
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "holdout",
+    "utc": "2027-02-10T06:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.45684282667934895,
+      "keepSupport": 0.444706529378891
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "holdout",
+    "utc": "2027-02-11T12:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.03149034455418587,
+      "keepSupport": 0.12619420886039734
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "holdout",
+    "utc": "2027-02-12T18:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.6701011443510652,
+      "keepSupport": 0.3595050657168031
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "holdout",
+    "utc": "2027-02-13T00:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.2915330696851015,
+      "keepSupport": 0.2915330696851015
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "holdout",
+    "utc": "2027-02-13T06:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.42369356378912926,
+      "keepSupport": 0.42369356378912926
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "holdout",
+    "utc": "2027-02-13T12:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.3420282155275345,
+      "keepSupport": 0.3420282155275345
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "holdout",
+    "utc": "2027-02-13T23:59:59.000Z",
+    "error_us": {
+      "dropLast": 0.24780456442385912,
+      "keepSupport": 0.24780456442385912
+    },
+    "reference_eop": "eop.261118.p270214"
+  },
+  {
+    "site": "holdout",
+    "utc": "2027-02-14T00:00:00.000Z",
+    "error_us": {
+      "dropLast": 0.2503074938431382,
+      "keepSupport": 0.2503074938431382
+    },
+    "reference_eop": "eop.261118.p270214"
+  }
+]
