@@ -1,0 +1,216 @@
+{
+  "generated": "2026-11-19T03:03:52.437Z",
+  "model": "DE441 + modern ERFA IAU2006/2000A + JPL EOP2 ITRF2008; no fitted corrections",
+  "scope": "Stratified, random, daily, boundary and stress coverage of every declared input dimension; not exhaustive proof over continuous inputs",
+  "horizons": {
+    "cases": 42200,
+    "sites": 40,
+    "times_per_site": 1055,
+    "reference_eop_files": [
+      "eop.261118.p270214"
+    ],
+    "all": {
+      "count": 42200,
+      "max_abs_ms": 1453395.1249728561,
+      "p50_ms": 0.23545559088233858,
+      "p95_ms": 3210.0239822320873,
+      "p99_ms": 146987.7457859693,
+      "rms_ms": 32600.248792235678,
+      "worst": {
+        "ms": 252460801000,
+        "longitude": -135,
+        "latitude": -89.999999,
+        "height": -1000,
+        "stratum": "polar-boundary",
+        "error_ms": -1453395.1249728561,
+        "dut1_difference_ms": -0.0962001666831025,
+        "eop_status": "J",
+        "condition": 9660058.92998771
+      }
+    },
+    "nonpolar": {
+      "count": 35870,
+      "max_abs_ms": 7.244816952152178,
+      "p50_ms": 0.18362791161052883,
+      "p95_ms": 1.7254886915907264,
+      "p99_ms": 4.639335485990159,
+      "rms_ms": 0.9048310259528725,
+      "worst": {
+        "ms": 1810420925123,
+        "longitude": -135,
+        "latitude": 85,
+        "height": 100000,
+        "stratum": "polar-boundary",
+        "error_ms": -7.244816952152178,
+        "dut1_difference_ms": -0.7393999999944223,
+        "eop_status": "JX",
+        "condition": 11.259711241214196
+      }
+    },
+    "polar": {
+      "count": 6330,
+      "max_abs_ms": 1453395.1249728561,
+      "p50_ms": 401.75332729995716,
+      "p95_ms": 146989.01958417264,
+      "p99_ms": 247853.94106281456,
+      "rms_ms": 84173.48040880777,
+      "worst": {
+        "ms": 252460801000,
+        "longitude": -135,
+        "latitude": -89.999999,
+        "height": -1000,
+        "stratum": "polar-boundary",
+        "error_ms": -1453395.1249728561,
+        "dut1_difference_ms": -0.0962001666831025,
+        "eop_status": "J",
+        "condition": 9660058.92998771
+      }
+    },
+    "observed_nonpolar": {
+      "count": 27676,
+      "max_abs_ms": 5.31032971048262,
+      "p50_ms": 0.14036177890375257,
+      "p95_ms": 0.8884972194209695,
+      "p99_ms": 2.837120438925922,
+      "rms_ms": 0.5838781375978979,
+      "worst": {
+        "ms": 1792053370123,
+        "longitude": -135,
+        "latitude": 85,
+        "height": 100000,
+        "stratum": "polar-boundary",
+        "error_ms": -5.31032971048262,
+        "dut1_difference_ms": 0.2978847404090032,
+        "eop_status": "J",
+        "condition": 11.25966151792965
+      }
+    },
+    "predicted_nonpolar": {
+      "count": 238,
+      "max_abs_ms": 5.317283910699189,
+      "p50_ms": 0.30609483656007797,
+      "p95_ms": 3.314259127364494,
+      "p99_ms": 5.30665012774989,
+      "rms_ms": 1.1771811259399556,
+      "worst": {
+        "ms": 1800875218081,
+        "longitude": -135,
+        "latitude": 85,
+        "height": 100000,
+        "stratum": "polar-boundary",
+        "error_ms": -5.317283910699189,
+        "dut1_difference_ms": 0.3011089920123833,
+        "eop_status": "JP",
+        "condition": 11.259711146024577
+      }
+    },
+    "extrapolated_nonpolar": {
+      "count": 7956,
+      "max_abs_ms": 7.244816952152178,
+      "p50_ms": 0.724560726666823,
+      "p95_ms": 2.8567058907356113,
+      "p99_ms": 7.104883654392324,
+      "rms_ms": 1.5696707664787481,
+      "worst": {
+        "ms": 1810420925123,
+        "longitude": -135,
+        "latitude": 85,
+        "height": 100000,
+        "stratum": "polar-boundary",
+        "error_ms": -7.244816952152178,
+        "dut1_difference_ms": -0.7393999999944223,
+        "eop_status": "JX",
+        "condition": 11.259711241214196
+      }
+    },
+    "holdout": {
+      "count": 12660,
+      "max_abs_ms": 5.378692643716931,
+      "p50_ms": 0.18351423204876482,
+      "p95_ms": 1.8398874963168055,
+      "p99_ms": 3.315185458632186,
+      "rms_ms": 0.8051127620921072,
+      "worst": {
+        "ms": 4102412399999,
+        "longitude": 96.63397427,
+        "latitude": 83.76907102,
+        "height": 88154.506,
+        "stratum": "holdout",
+        "error_ms": 5.378692643716931,
+        "dut1_difference_ms": -0.7393999999944223,
+        "eop_status": "JX",
+        "condition": 9.058056856582262
+      }
+    }
+  },
+  "native": {
+    "cases": 113524,
+    "max_abs_ms": 0.0012786331353709102,
+    "worst": {
+      "ms": 94793145123,
+      "longitude": -180,
+      "latitude": -89.99991,
+      "height": -1000,
+      "stratum": "daily",
+      "error_ms": 0.0012786331353709102
+    },
+    "strata": {
+      "daily": 20044,
+      "spk-boundary": 58440,
+      "random-holdout": 32768,
+      "corner": 224,
+      "manual-stress": 2048
+    }
+  },
+  "boundaries": {
+    "checks": 91,
+    "leap_events": 25
+  },
+  "domain": {
+    "longitude": [
+      -180,
+      180
+    ],
+    "latitude_open": [
+      -90,
+      90
+    ],
+    "height_m": [
+      -1000,
+      100000
+    ],
+    "jst_start": "1972-01-01T09:15:00+09:00",
+    "jst_end": "2099-12-31T23:59:59.999+09:00",
+    "automatic_data": "intersection with selected JPL/IERS snapshot; outside stops unless manual or explicit fixed-value extrapolation",
+    "manual_ranges": {
+      "dut1_seconds": [
+        -10,
+        10
+      ],
+      "xp_yp_arcseconds": [
+        -10,
+        10
+      ],
+      "dX_dY_mas": [
+        -1000,
+        1000
+      ],
+      "TAI_minus_UTC_integer_seconds": [
+        10,
+        100
+      ]
+    }
+  },
+  "limits": [
+    "Near-pole comparisons can differ by minutes; this is explicitly reported and flagged in the UI.",
+    "Future fixed-EOP results are model extrapolations, not predictions with guaranteed accuracy.",
+    "IAU/terrestrial-frame differences and inaccessible exact legacy EOP inputs prevent complete attribution of remaining sub-millisecond residuals.",
+    "Native agreement checks implementation consistency, not absolute physical truth."
+  ],
+  "spk_boundaries": {
+    "cases": 52596,
+    "position_max_km": 8.940696716308594e-8,
+    "velocity_max_km_s": 2.4868995751603507e-14,
+    "coverage": "Every included Type2 record boundary, exact and ±1microsecond"
+  }
+}

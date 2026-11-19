@@ -1,0 +1,665 @@
+{
+  "generated": "2026-11-19T03:07:25.331Z",
+  "model": "JPL DE441 + ERFA IAU2006/2000A + IERS EOP; airless topocentric Sun center",
+  "horizons": {
+    "cases": 64,
+    "max_abs_ms": 3.689053701236844,
+    "rms_ms": 0.6994589335215053,
+    "reference_date": "2026-11-19T02:21:59.761197+00:00",
+    "eop_file": "eop.261118.p270214"
+  },
+  "native": {
+    "cases": 64,
+    "max_abs_ms": 4.0745362639427185e-7,
+    "max_position_error_km": 5.960464477539063e-8,
+    "max_velocity_error_km_day": 1.3969838619232178e-9
+  },
+  "limits": [
+    "Validation applies only to the listed synthetic sites and dates; not a certified global accuracy bound.",
+    "Horizons uses its own EOP fit and IAU1976/1980 orientation; these differ from this implementation.",
+    "IERS predictions, missing dX/dY, input coordinate errors, system clock error, future leap seconds and geophysical deformation add uncertainty.",
+    "UTC leap-second instants 23:59:60 are not accepted by the browser time input."
+  ],
+  "comparisons": [
+    {
+      "utc": "1973-01-02T00:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 86168.97385636193,
+      "horizons_solar_seconds": 86168.97161712,
+      "error_ms": 2.2392419341485947,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2000-01-01T12:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 43003.20734145804,
+      "horizons_solar_seconds": 43003.20744072,
+      "error_ms": -0.09926196071319282,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2016-12-31T23:59:58.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 86191.15146868967,
+      "horizons_solar_seconds": 86191.15137696001,
+      "error_ms": 0.09172965656034648,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2016-12-31T23:59:59.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 86192.15109286536,
+      "horizons_solar_seconds": 86192.1510012,
+      "error_ms": 0.09166535164695233,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2017-01-01T00:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 86194.15034121589,
+      "horizons_solar_seconds": 86194.15024932001,
+      "error_ms": 0.09189588308800012,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2017-01-01T00:00:01.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 86195.1499653912,
+      "horizons_solar_seconds": 86195.14987356,
+      "error_ms": 0.09183119982481003,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-01-01T00:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 86215.30912103,
+      "horizons_solar_seconds": 86215.30902612,
+      "error_ms": 0.09491000673733652,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-03-20T09:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 31958.78497971031,
+      "horizons_solar_seconds": 31958.784882000004,
+      "error_ms": 0.09771030454430729,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-06-21T12:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 43084.66015545989,
+      "horizons_solar_seconds": 43084.66001184,
+      "error_ms": 0.143619894515723,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-09-22T18:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 65254.3771757317,
+      "horizons_solar_seconds": 65254.37701248,
+      "error_ms": 0.16325170872732997,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-11-19T03:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 11676.355782514991,
+      "horizons_solar_seconds": 11676.35560356,
+      "error_ms": 0.17895500059239566,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-01-01T00:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 86200.30946620667,
+      "horizons_solar_seconds": 86200.30924128,
+      "error_ms": 0.22492666903417557,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-03-20T09:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 31951.220566192613,
+      "horizons_solar_seconds": 31951.22029488,
+      "error_ms": 0.27131261595059186,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-06-21T12:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 43090.94745831024,
+      "horizons_solar_seconds": 43090.947175320005,
+      "error_ms": 0.2829902368830517,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-09-22T18:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 65242.38207245967,
+      "horizons_solar_seconds": 65242.38180276001,
+      "error_ms": 0.26969966711476445,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-11-19T03:00:00.000000Z",
+      "longitude": 0,
+      "latitude": 0,
+      "height_m": 0,
+      "local_solar_seconds": 11681.353133461715,
+      "horizons_solar_seconds": 11681.35251912,
+      "error_ms": 0.6143417122075334,
+      "eop_status": "P"
+    },
+    {
+      "utc": "1973-01-02T00:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 32168.544990613707,
+      "horizons_solar_seconds": 32168.54130156,
+      "error_ms": 3.689053701236844,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2000-01-01T12:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 75403.62319524787,
+      "horizons_solar_seconds": 75403.62331236,
+      "error_ms": -0.11711212573572993,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2016-12-31T23:59:58.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 32190.71790329012,
+      "horizons_solar_seconds": 32190.71780628,
+      "error_ms": 0.09701011003926396,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2016-12-31T23:59:59.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 32191.717600414122,
+      "horizons_solar_seconds": 32191.717503599997,
+      "error_ms": 0.09681412484496832,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2017-01-01T00:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 32193.716994668473,
+      "horizons_solar_seconds": 32193.71689788,
+      "error_ms": 0.09678846981842071,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2017-01-01T00:00:01.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 32194.716691798967,
+      "horizons_solar_seconds": 32194.716594839996,
+      "error_ms": 0.09695897460915148,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-01-01T00:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 32214.880970665108,
+      "horizons_solar_seconds": 32214.880857600005,
+      "error_ms": 0.11306510714348406,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-03-20T09:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 64359.70022851316,
+      "horizons_solar_seconds": 64359.700113599996,
+      "error_ms": 0.11491315672174096,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-06-21T12:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 75485.0564348977,
+      "horizons_solar_seconds": 75485.05627140001,
+      "error_ms": 0.16349769430235028,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-09-22T18:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 11253.448377038163,
+      "horizons_solar_seconds": 11253.4481952,
+      "error_ms": 0.181838171556592,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-11-19T03:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 44076.82318358788,
+      "horizons_solar_seconds": 44076.82298364,
+      "error_ms": 0.19994788453914225,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-01-01T00:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 32199.875260117202,
+      "horizons_solar_seconds": 32199.87501252,
+      "error_ms": 0.2475971996318549,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-03-20T09:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 64352.13713304381,
+      "horizons_solar_seconds": 64352.1368394,
+      "error_ms": 0.2936438104370609,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-06-21T12:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 75491.35007019457,
+      "horizons_solar_seconds": 75491.34976332,
+      "error_ms": 0.30687457183375955,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-09-22T18:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 11241.455355184647,
+      "horizons_solar_seconds": 11241.45506124,
+      "error_ms": 0.2939446421805769,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-11-19T03:00:00.000000Z",
+      "longitude": 135,
+      "latitude": 35,
+      "height_m": 100,
+      "local_solar_seconds": 44081.818061490194,
+      "horizons_solar_seconds": 44081.81734428,
+      "error_ms": 0.7172101904870942,
+      "eop_status": "P"
+    },
+    {
+      "utc": "1973-01-02T00:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 68169.42032514903,
+      "horizons_solar_seconds": 68169.42017892,
+      "error_ms": 0.1462290238123387,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2000-01-01T12:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 25002.756690183363,
+      "horizons_solar_seconds": 25002.7568154,
+      "error_ms": -0.1252166402991861,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2016-12-31T23:59:58.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 68191.60412072582,
+      "horizons_solar_seconds": 68191.60417884,
+      "error_ms": -0.05811417941004038,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2016-12-31T23:59:59.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 68192.60378438729,
+      "horizons_solar_seconds": 68192.60384268001,
+      "error_ms": -0.05829271685797721,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2017-01-01T00:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 68194.60311170167,
+      "horizons_solar_seconds": 68194.60317,
+      "error_ms": -0.05829833389725536,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2017-01-01T00:00:01.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 68195.60277535519,
+      "horizons_solar_seconds": 68195.60283347999,
+      "error_ms": -0.058124802308157086,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-01-01T00:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 68215.75903155177,
+      "horizons_solar_seconds": 68215.7591442,
+      "error_ms": -0.1126482238760218,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-03-20T09:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 13958.859188245697,
+      "horizons_solar_seconds": 13958.85930048,
+      "error_ms": -0.11223429464735091,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-06-21T12:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 25084.22044004497,
+      "horizons_solar_seconds": 25084.22050908,
+      "error_ms": -0.06903502799104899,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-09-22T18:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 47253.90113547366,
+      "horizons_solar_seconds": 47253.901184999995,
+      "error_ms": -0.049526337534189224,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-11-19T03:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 80077.03737000743,
+      "horizons_solar_seconds": 80077.03740756001,
+      "error_ms": -0.03755258512683213,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-01-01T00:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 68200.76191204411,
+      "horizons_solar_seconds": 68200.76191176,
+      "error_ms": 0.0002841115929186344,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-03-20T09:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 13951.289975310006,
+      "horizons_solar_seconds": 13951.28992968,
+      "error_ms": 0.045630004024133086,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-06-21T12:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 25090.49940237547,
+      "horizons_solar_seconds": 25090.49934864,
+      "error_ms": 0.05373546446207911,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-09-22T18:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 47241.90658809815,
+      "horizons_solar_seconds": 47241.90655056,
+      "error_ms": 0.03753814962692559,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-11-19T03:00:00.000000Z",
+      "longitude": -75,
+      "latitude": 40,
+      "height_m": 1000,
+      "local_solar_seconds": 80082.03861294338,
+      "horizons_solar_seconds": 80082.03827628,
+      "error_ms": 0.3366633754922077,
+      "eop_status": "P"
+    },
+    {
+      "utc": "1973-01-02T00:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 42944.94422004961,
+      "horizons_solar_seconds": 42944.94300384,
+      "error_ms": 1.2162096099928021,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2000-01-01T12:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 86179.30769503795,
+      "horizons_solar_seconds": 86179.30759656,
+      "error_ms": 0.0984779471764341,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2016-12-31T23:59:58.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 42967.14122118188,
+      "horizons_solar_seconds": 42967.1406186,
+      "error_ms": 0.6025818875059485,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2016-12-31T23:59:59.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 42968.14091235075,
+      "horizons_solar_seconds": 42968.1403098,
+      "error_ms": 0.6025507464073598,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2017-01-01T00:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 42970.14029468848,
+      "horizons_solar_seconds": 42970.13969184,
+      "error_ms": 0.6028484785929322,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2017-01-01T00:00:01.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 42971.139985858405,
+      "horizons_solar_seconds": 42971.139383040005,
+      "error_ms": 0.6028183997841552,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-01-01T00:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 42991.29181106581,
+      "horizons_solar_seconds": 42991.291073160006,
+      "error_ms": 0.7379057933576405,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-03-20T09:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 75135.46200232001,
+      "horizons_solar_seconds": 75135.46125132,
+      "error_ms": 0.7510000141337514,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-06-21T12:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 86260.76862537808,
+      "horizons_solar_seconds": 86260.76782956,
+      "error_ms": 0.7958180794958025,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-09-22T18:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 22029.604364809056,
+      "horizons_solar_seconds": 22029.6035448,
+      "error_ms": 0.8200090524042025,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2024-11-19T03:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 54853.05532103818,
+      "horizons_solar_seconds": 54853.05448512,
+      "error_ms": 0.8359181811101735,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-01-01T00:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 42976.30948908115,
+      "horizons_solar_seconds": 42976.30858668,
+      "error_ms": 0.9024011378642172,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-03-20T09:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 75127.9103292691,
+      "horizons_solar_seconds": 75127.90937364001,
+      "error_ms": 0.9556290897307917,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-06-21T12:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 86267.04467921515,
+      "horizons_solar_seconds": 86267.04371136,
+      "error_ms": 0.9678551432443783,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-09-22T18:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 22017.59633766717,
+      "horizons_solar_seconds": 22017.595374,
+      "error_ms": 0.9636671748012304,
+      "eop_status": "B"
+    },
+    {
+      "utc": "2026-11-19T03:00:00.000000Z",
+      "longitude": 179.9,
+      "latitude": -65,
+      "height_m": 0,
+      "local_solar_seconds": 54858.05056277674,
+      "horizons_solar_seconds": 54858.04955244,
+      "error_ms": 1.0103367385454476,
+      "eop_status": "P"
+    }
+  ]
+}

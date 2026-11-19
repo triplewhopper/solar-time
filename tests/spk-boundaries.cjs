@@ -1,0 +1,5 @@
+const fs=require('fs'),vm=require('vm'),zlib=require('zlib'),assert=require('node:assert/strict'),path=require('path');
+const root=path.resolve(__dirname,'..'),c={};vm.createContext(c);vm.runInContext(fs.readFileSync(root+'/solar-core.js','utf8'),c);const b=fs.readFileSync(root+'/data/de441-solar.bsp'),spk=new c.SolarPrecision.SPK(b.buffer.slice(b.byteOffset,b.byteOffset+b.length)),rows=JSON.parse(zlib.gunzipSync(fs.readFileSync(root+'/tests/spk-boundaries.json.gz')));
+let p=0,v=0;for(const r of rows){const out=spk.state(r[0],r[1],r[2]);for(let k=0;k<3;k++){p=Math.max(p,Math.abs(out[0][k]-r[3+k]));v=Math.max(v,Math.abs(out[1][k]-r[6+k]));}}
+assert.ok(p<1e-5,'SPK position error over1cm');assert.ok(v<1e-8,'SPK velocity mismatch');
+const report=JSON.parse(fs.readFileSync(root+'/data/validation.json'));report.spk_boundaries={cases:rows.length,position_max_km:p,velocity_max_km_s:v,coverage:'Every included Type2 record boundary, exact and ±1microsecond'};fs.writeFileSync(root+'/data/validation.json',JSON.stringify(report,null,2));console.log(report.spk_boundaries);

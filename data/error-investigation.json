@@ -1,0 +1,50 @@
+{
+  "status": "Diagnostic research complete; exact legacy EOP ASCII unavailable publicly through checked official endpoints; no empirical residual correction recommended.",
+  "official_sources": {
+    "horizons": "https://ssd.jpl.nasa.gov/horizons/manual.html",
+    "jpl_eop2": "https://eop-external.jpl.nasa.gov/eop2/261118_190003-marge_eop2.long",
+    "itrf_transform": "https://iers-conventions.obspm.fr/conventions/content/tn36.pdf (Table4.1)",
+    "pck_current": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/earth_000101_270214_261118.bpc",
+    "pck_historical": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/earth_620120_260806.bpc",
+    "legacy_eop_official_documented_endpoint": "https://eop.jpl.nasa.gov/eop/latest.long"
+  },
+  "legacy_eop_access": {
+    "eop.jpl.nasa.gov": "DNS resolution failed",
+    "eop-external.jpl.nasa.gov/eop/": "HTTP403",
+    "eop-external.jpl.nasa.gov/eop/latest.long": "HTTP403",
+    "ssd.jpl.nasa.gov/ftp/eop/": "HTTP404"
+  },
+  "important_coordinate_convention": "Horizons uses ITRF93 and IAU1976/1980 corrected by JPL legacyEOP; publicEOP2 usesITRF2008/ICRF2 andIAU2006/2000A. Equal numericlongitude/latitude acrossframes does not identify exactly same terrestrialdirection.",
+  "confirmed_1973_site2_error_budget_ms": {
+    "IERS": 3.689053701236844,
+    "JPL_DUT1_only": 2.007041999604553,
+    "JPL_DUT1_and_pole": 0.49254862824454904,
+    "all_JPL_EOP2": -0.04342771717347205
+  },
+  "diagnostic_64case_max_ms": {
+    "originalIERS": 3.689053701236844,
+    "JPLEOP2modern": 0.9829578921198845,
+    "JPLEOP2_with_documented_ITRF93_to_2008_rotation_only": 0.2444414421916008,
+    "JPLEOP2_with_full_ITRF93_to_2008_Helmert": 0.5123851442476735,
+    "PCK_sitePV_and_meridian_with_modernCIP": 0.17944315914064646
+  },
+  "pck_limit": "PublicPCK fully reproduces terrestrial-to-inertial rotation, but testing still used modernCIP for apparentmeridian axis. It is not a fullyvalidated exactHorizonsreplacement. CurrentPCK covers2000-01-01..2027-02-14; historicalPCK covers1962-01-20..2026-08-08, older sourceEOP release.",
+  "gmst_note": "Horizonsmanual prints67310.548 seconds versusERFAgmst82 67310.54841; literaldifference410microseconds. Manualprecision alone does not establish actualruntimeconstant; do not subtract410microseconds as a fit.",
+  "interpolation_note": "JPLEOP2 timestamps are MJD(TAI),notUTC; interpolateTAI-UT1,thenDUT1=TAI-UTC-(TAI-UT1). Here linearinterpolation used; legacyPCKdocumentation describes cubicLagrange and UT1Rdetiding for extension. Exactremainder cannot be assigned solelyto interpolation/tides without legacyinputandmodels.",
+  "pole_conditioning": "Awayfromsingularity, longitudeperturbation is approximatelytan(phi_c)*(delta_y_p*cos(lambda)+delta_x_p*sin(lambda)); angularhoursconvertat1arcsecond/15seconds. At89.999999deg,co-latitude3.6mas iscomparableto5masreferenceframerotation; linearapproximationbreaks, solarhouranglecanchangebyhours. This is a reference-meridianconditioningproblem, not guaranteedsubmillisecondglobalagreement.",
+  "recommended_release": "Use documentedmodernDE441+ERFA+JPLEOP2 model with explicitreferenceframe/dataepoch and measuredcomparisonbound perlatitude/date domain. Do not silentlyapplyanempiricaloffset; separate genuineUTCpredictionuncertaintyfromframe-conventionresidual. Freeze/predictbeyondEOPonlyexplicitly.",
+  "downloaded_files": {
+    "261118_190003-marge_eop2.long": {
+      "bytes": 3993818,
+      "sha256": "ec79ea9d790a167a2c2edbad7ef0dfeae1a149a0cf258ea03c90f8873a1ffe01"
+    },
+    "earth_000101_270214_261118.bpc": {
+      "bytes": 5166080,
+      "sha256": "be55272f1c98da612196a9ce08b1131a6559c0262dc127079f0fb3c113b0293e"
+    },
+    "earth_620120_260806.bpc": {
+      "bytes": 12274688,
+      "sha256": "652b02c0b3a5a283d393497f7f96e1fe4aa47ee6dcc035a089eb9e6b5df86643"
+    }
+  }
+}
