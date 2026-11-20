@@ -1,20 +1,20 @@
 {
-  "eop_sha256": "21dd0e9bdf1a8b2eb144dcfdc734de125ecdff89df36197cb598b63ef053edc4",
-  "checked_at": "2026-11-19T08:49:53.534552+00:00",
-  "release": "2026-11-18（JPL原始）",
+  "eop_sha256": "13f648940772b40e2bd17358641ba98c8ec310274c7263a2618d9fba8d68bc76",
+  "checked_at": "2026-11-20T01:27:40.596341+00:00",
+  "release": "2026-11-19（PCK恢复）",
   "verification": {
-    "source_sha256": "9b9feb3d86223dc7641c7f71d751e67ac5f1cfdfe382861e4bb5ef0eea14095d",
-    "horizons_eop_file": "eop.261118.p270214",
+    "source_sha256": "4c2f2992ca569ba4e2fa84c67b3ba3bf53f26ce50bd1659335eacbe49be9662b",
+    "horizons_eop_file": "eop.261119.p270215",
     "native_cases": 113524,
     "native_max_us": 1.3166718417778611,
     "horizons_cases": 1020,
-    "horizons_max_us": 1.7484126146882772,
+    "horizons_max_us": 1.794731360860169,
     "worst": {
       "ms": 4102412340000,
       "longitude": 135,
-      "latitude": 35,
+      "latitude": 89.999999,
       "height": 100,
-      "error_us": 1.7484126146882772
+      "error_us": 1.794731360860169
     },
     "threshold_us": 10,
     "scope": "Daily recovery interval, fresh boundary/polar probes and independent full-domain native checks; not exhaustive continuous-domain proof"
