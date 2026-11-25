@@ -1,0 +1,17 @@
+{
+  "source_sha256": "3888db81f89804b3c402a358545c496c7c7bac41cbfaf3d66e7afe37d026b3c1",
+  "horizons_eop_file": "eop.261124.p270220",
+  "native_cases": 113524,
+  "native_max_us": 1.3166718417778611,
+  "horizons_cases": 1020,
+  "horizons_max_us": 1.8216960597783327,
+  "worst": {
+    "ms": 4102412340000,
+    "longitude": 135,
+    "latitude": 89.999999,
+    "height": 100,
+    "error_us": 1.8216960597783327
+  },
+  "threshold_us": 10,
+  "scope": "Daily recovery interval, fresh boundary/polar probes and independent full-domain native checks; not exhaustive continuous-domain proof"
+}
