@@ -148,39 +148,39 @@
   "runtime": "All arithmetic local; optional user-triggered one-shot browser geolocation; no coordinate upload, storage or calculation API",
   "remaining": "Whether an original ASCII was obtained is recorded per snapshot. The Nov18 original is now obtained and matches all 137 recovered records. Remaining microsecond numerical residuals are not fully decomposed; agreement is not a physical accuracy guarantee. Far-future fixed EOP does not forecast real Earth rotation.",
   "current_snapshot": {
-    "release_label": "2026-11-25（PCK恢复）",
+    "release_label": "2026-11-26（PCK恢复）",
     "source_kind": "original_ascii_verified_against_independent_pck_recovery",
-    "source_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/earth_000101_270221_261125.bpc",
-    "source_sha256": "1d7d81c3b9f4cb4eb7bee58ab7cf6d6eb29b1bf8074551abf10058529a040df9",
-    "base_sha256": "5902667229b17d16cc5424d2c71592ba294e99574b10dd1aa5cc191a5c0804ee",
+    "source_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/earth_000101_270222_261126.bpc",
+    "source_sha256": "43998668331dfb9223ea3e196a6cb10daf0171aab66759237af246136c98a14b",
+    "base_sha256": "5d0f0dbe5d20b06d899b1b30cec19a6a61b8c6e1c444d1bfc0b3d5bbe7d2cf0b",
     "derived_range": [
-      "2026-10-08",
-      "2027-02-21"
+      "2026-10-09",
+      "2027-02-22"
     ],
-    "last_observation_utc": "2026-11-25T00:00:00+00:00",
-    "evaluation_end_mjd": 61456,
-    "support_end_mjd": 61457,
+    "last_observation_utc": "2026-11-26T00:00:00+00:00",
+    "evaluation_end_mjd": 61457,
+    "support_end_mjd": 61458,
     "record_count": 137,
     "window_count": 70,
     "overlap_conflicts": 0,
     "source_file_obtained": false,
-    "horizons_eop_file": "eop.261125.p270221",
-    "pck_sha256": "1d7d81c3b9f4cb4eb7bee58ab7cf6d6eb29b1bf8074551abf10058529a040df9",
-    "pck_source_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/earth_000101_270221_261125.bpc"
+    "horizons_eop_file": "eop.261126.p270222",
+    "pck_sha256": "43998668331dfb9223ea3e196a6cb10daf0171aab66759237af246136c98a14b",
+    "pck_source_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/earth_000101_270222_261126.bpc"
   },
   "current_verification": {
-    "source_sha256": "1d7d81c3b9f4cb4eb7bee58ab7cf6d6eb29b1bf8074551abf10058529a040df9",
-    "horizons_eop_file": "eop.261125.p270221",
+    "source_sha256": "43998668331dfb9223ea3e196a6cb10daf0171aab66759237af246136c98a14b",
+    "horizons_eop_file": "eop.261126.p270222",
     "native_cases": 113524,
     "native_max_us": 1.3166718417778611,
     "horizons_cases": 1020,
-    "horizons_max_us": 1.7088896129280329,
+    "horizons_max_us": 1.752167008817196,
     "worst": {
       "ms": 4102412340000,
-      "longitude": 0,
-      "latitude": 0,
-      "height": 0,
-      "error_us": 1.7088896129280329
+      "longitude": -135,
+      "latitude": -89.999999,
+      "height": -1000,
+      "error_us": 1.752167008817196
     },
     "threshold_us": 10,
     "scope": "Daily recovery interval, fresh boundary/polar probes and independent full-domain native checks; not exhaustive continuous-domain proof"

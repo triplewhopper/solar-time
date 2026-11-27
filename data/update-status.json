@@ -1,28 +1,28 @@
 {
-  "checked_at": "2026-11-26T02:26:01.339069+00:00",
-  "ascii_observed": "2026-11-24",
-  "ascii_sha256": "5902667229b17d16cc5424d2c71592ba294e99574b10dd1aa5cc191a5c0804ee",
-  "pck_file": "earth_000101_270221_261125.bpc",
-  "pck_sha256": "1d7d81c3b9f4cb4eb7bee58ab7cf6d6eb29b1bf8074551abf10058529a040df9",
-  "installed_release": "2026-11-25（PCK恢复）",
-  "workflow_run": "45742158124",
+  "checked_at": "2026-11-27T02:24:08.895090+00:00",
+  "ascii_observed": "2026-11-25",
+  "ascii_sha256": "5d0f0dbe5d20b06d899b1b30cec19a6a61b8c6e1c444d1bfc0b3d5bbe7d2cf0b",
+  "pck_file": "earth_000101_270222_261126.bpc",
+  "pck_sha256": "43998668331dfb9223ea3e196a6cb10daf0171aab66759237af246136c98a14b",
+  "installed_release": "2026-11-26（PCK恢复）",
+  "workflow_run": "45927903668",
   "status": "validated",
   "verification": {
-    "source_sha256": "1d7d81c3b9f4cb4eb7bee58ab7cf6d6eb29b1bf8074551abf10058529a040df9",
-    "horizons_eop_file": "eop.261125.p270221",
+    "source_sha256": "43998668331dfb9223ea3e196a6cb10daf0171aab66759237af246136c98a14b",
+    "horizons_eop_file": "eop.261126.p270222",
     "native_cases": 113524,
     "native_max_us": 1.3166718417778611,
     "horizons_cases": 1020,
-    "horizons_max_us": 1.7088896129280329,
+    "horizons_max_us": 1.752167008817196,
     "worst": {
       "ms": 4102412340000,
-      "longitude": 0,
-      "latitude": 0,
-      "height": 0,
-      "error_us": 1.7088896129280329
+      "longitude": -135,
+      "latitude": -89.999999,
+      "height": -1000,
+      "error_us": 1.752167008817196
     },
     "threshold_us": 10,
     "scope": "Daily recovery interval, fresh boundary/polar probes and independent full-domain native checks; not exhaustive continuous-domain proof"
   },
-  "release_path": "data/releases/2026-11-25-1d7d81c3b9f4"
+  "release_path": "data/releases/2026-11-26-43998668331d"
 }
