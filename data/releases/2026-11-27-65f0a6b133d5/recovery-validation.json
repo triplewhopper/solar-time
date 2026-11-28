@@ -1,0 +1,163 @@
+{
+  "heldout": {
+    "count": 544,
+    "fractions": [
+      0.07321,
+      0.38321,
+      0.67321,
+      0.97321
+    ],
+    "training_fractions": [
+      0.025,
+      0.125,
+      0.225,
+      0.325,
+      0.425,
+      0.525,
+      0.625,
+      0.725,
+      0.825,
+      0.925
+    ],
+    "max_axis_mas": [
+      3.3689455165464254e-05,
+      4.359429770779033e-05,
+      0.03698142665902965
+    ],
+    "max_norm_mas": 0.03698142667331892,
+    "rms_norm_mas": 0.010069912277454969,
+    "worst": {
+      "utc": "2027-01-22T09:11:49.344000+00:00",
+      "residual_rotation_mas": [
+        -3.9809098644601866e-07,
+        -9.47839068826091e-07,
+        0.03698142665902965
+      ]
+    }
+  },
+  "controls": [
+    {
+      "center": "2000-01-15",
+      "known_record_count": 8,
+      "known_parameter_count": 40,
+      "rounding_mismatches": [],
+      "inferred_ut1_deviation_us": [
+        -0.0054336375399088865,
+        -0.0006402025576335291,
+        -0.00910484487803842,
+        0.0006692353338166868,
+        -0.01731907417479306,
+        -0.0037110545747509605,
+        0.004386595975347518,
+        -0.015257441532412486
+      ],
+      "condition_number": 717.2049445123731
+    },
+    {
+      "center": "2016-07-15",
+      "known_record_count": 8,
+      "known_parameter_count": 40,
+      "rounding_mismatches": [
+        {
+          "mjd": 57581.0,
+          "column": 5,
+          "base": -99.88,
+          "derived": -99.86999999999999,
+          "quantum": 0.01
+        }
+      ],
+      "inferred_ut1_deviation_us": [
+        0.033105109764619556,
+        -0.07701648030433716,
+        -0.1172897654555527,
+        -0.09083358776251771,
+        -0.02769818507886157,
+        -0.031241093267908582,
+        -0.07727037854010632,
+        -0.027406279912156606
+      ],
+      "condition_number": 717.282061094222
+    },
+    {
+      "center": "2020-06-15",
+      "known_record_count": 8,
+      "known_parameter_count": 40,
+      "rounding_mismatches": [
+        {
+          "mjd": 59012.0,
+          "column": 5,
+          "base": -107.52,
+          "derived": -107.53,
+          "quantum": 0.01
+        }
+      ],
+      "inferred_ut1_deviation_us": [
+        -0.2645936518774761,
+        0.011876430505708413,
+        -0.04464725833486227,
+        -0.07894093556615189,
+        -0.11157091961422338,
+        -0.1531544882027447,
+        -0.2867931030436921,
+        -0.14593943831187062
+      ],
+      "condition_number": 717.2285484502645
+    },
+    {
+      "center": "2024-01-01",
+      "known_record_count": 8,
+      "known_parameter_count": 40,
+      "rounding_mismatches": [],
+      "inferred_ut1_deviation_us": [
+        -0.03498632850096328,
+        -0.2817766571183711,
+        -0.07513644817436216,
+        -0.18414981894920857,
+        -0.019943797724408796,
+        -0.0832636004588494,
+        0.038355103981757566,
+        -0.1522151080735057
+      ],
+      "condition_number": 717.1895111592343
+    }
+  ],
+  "overlap_conflicts": 0,
+  "boundary_note": "Only a sub-microsecond floating-point overshoot of the PCK end is clamped to the exact kernel end; no wider extrapolation.",
+  "overlapping_historical_controls": [
+    {
+      "center": "2000-01-15",
+      "known_records": 8,
+      "known_parameters": 40,
+      "minimum_independent_windows": 2,
+      "overlap_conflicts": [],
+      "rounding_mismatches": []
+    },
+    {
+      "center": "2016-07-15",
+      "known_records": 8,
+      "known_parameters": 40,
+      "minimum_independent_windows": 2,
+      "overlap_conflicts": [],
+      "rounding_mismatches": []
+    },
+    {
+      "center": "2020-06-15",
+      "known_records": 8,
+      "known_parameters": 40,
+      "minimum_independent_windows": 2,
+      "overlap_conflicts": [],
+      "rounding_mismatches": []
+    },
+    {
+      "center": "2024-01-01",
+      "known_records": 8,
+      "known_parameters": 40,
+      "minimum_independent_windows": 2,
+      "overlap_conflicts": [],
+      "rounding_mismatches": []
+    }
+  ],
+  "single_window_edge_failures_retained": true,
+  "original_ascii_obtained": false,
+  "original_records_compared": 0
+}
